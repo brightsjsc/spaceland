@@ -1,0 +1,26 @@
+@keyframes rotateDropdown {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+
+
+@keyframes showDropdownMenu {
+    0%{
+        height: 0 !important;
+        overflow: hidden;
+    }
+    50%{
+        height: 50px !important;
+        overflow: hidden;
+    }
+    100%{
+        height: auto !important;
+    }
+}

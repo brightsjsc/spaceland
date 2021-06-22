@@ -1,0 +1,162 @@
+.pdl-0 {
+    padding-left: 0 !important;
+}
+
+.pdr-0 {
+    padding-right: 0 !important;
+}
+
+.bold-100 {
+    font-weight: 100;
+}
+
+.bold-200 {
+    font-weight: 200;
+}
+
+.bold-300 {
+    font-weight: 300;
+}
+
+.bold-400 {
+    font-weight: 400;
+}
+
+.bold-500 {
+    font-weight: 500;
+}
+
+.bold-600 {
+    font-weight: 600;
+}
+
+.bold-700 {
+    font-weight: 700;
+}
+
+.bold-800 {
+    font-weight: 800;
+}
+
+.bold-900 {
+    font-weight: 900;
+}
+
+.table thead tr th {
+    font-size: 0.9rem;
+}
+
+.tim-row{
+    margin-bottom: 20px;
+}
+
+.tim-white-buttons {
+    background-color: #777777;
+}
+.typography-line{
+    padding-left: 25%;
+    margin-bottom: 35px;
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.typography-line span{
+    bottom: 10px;
+    color: #c0c1c2;
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    left: 0;
+    position: absolute;
+    width: 260px;
+    text-transform: none;
+}
+.tim-row{
+    padding-top: 60px;
+}
+.tim-row h3{
+    margin-top: 0;
+}
+
+.tim-typo{
+    padding-left: 25%;
+    margin-bottom: 40px;
+    position: relative;
+    width: 100%;
+}
+.tim-typo .tim-note{
+    bottom: 5px;
+    color: #c0c1c2;
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    left: 0;
+    margin-left: 20px;
+    position: absolute;
+    width: 260px;
+}
+
+.sidebar .nav li .dropdown-menu a, .sidebar .nav li a {
+    text-transform: none;
+}
+
+.card-icon {
+    margin-right: 0px !important;
+}
+
+.required:after {
+    content: " *";
+    color: red;
+}
+
+label {
+    color: #666 !important;
+}
+
+.form-check .form-check-label {
+    white-space: nowrap;
+}
+
+.checkbox-radios .col-md-4 {
+    margin-top: 15px;
+}
+
+textarea.form-control {
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
+img.image_pre {
+    width: 22%;
+    margin: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.56);
+}
+
+img.gallery_pre {
+    width: 22%;
+    margin: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.56);
+}
+
+/*SCREEN 640*/
+@media screen and (max-width: 767px) {
+
+    .main-panel>.content {
+        padding: 0;
+    }
+
+    .pdl-0 {
+        padding-left: 15px !important;
+    }
+
+    .pdr-0 {
+        padding-right: 15px !important;
+    }
+
+    .card {
+        margin-bottom: 0;
+    }
+
+}

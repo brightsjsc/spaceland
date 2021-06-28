@@ -9,6 +9,7 @@ use App\ProductCate;
 use App\Product;
 use App\Project;
 use App\District;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 use Intervention\Image\ImageManagerStatic as Image;
@@ -37,7 +38,10 @@ class HomeController extends Controller
         $products3  = Product::getProductByDistrict('005');
         $products4  = Product::getProductByDistrict('009');
 
-        return view('pages.home',compact('products','products2','products3','products4'));
+        $post = DB::table('posts')->orderBy('created_at', 'DESC')->take(3)->get();
+        // return response()->json($post);
+
+        return view('pages.home',compact('products','products2','products3','products4','post'));
     }
 
     /**

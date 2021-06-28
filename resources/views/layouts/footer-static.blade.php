@@ -38,7 +38,7 @@
                     <a href="#">Về chúng tôi</a>
                   </li>
                   <li>
-                    <a href="#">Liên hệ</a>
+                    <a href="{{}}">Liên hệ</a>
                   </li>
                 </ul>
               </div>

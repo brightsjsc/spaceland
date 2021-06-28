@@ -105,8 +105,22 @@
                         </div>
                     </div>
                 </div>
-                <h4 style="margin-top: 20px; margin-left: -5px; color:#E65D26; font-weight: bold; font-style: italic;
-                        ">TIN TỨC MỚI NHẤT</h4>
+                <div class="news">
+                    <h4 style="margin-top: 30; margin-left: -5px; color:#E65D26; font-weight: bold; font-style: italic;
+                    ">TIN TỨC MỚI NHẤT</h4>
+                    <div>
+                        <div class="row">
+                            @foreach ($post as $value)
+                                <div class="col-sm"><img src="{{ asset('uploads/images/posts/' . $value->image) }}"
+                                        alt="" width="350" height="300">
+                                    <br>
+                                    {{ $value->title }}
+                                </div>
+                            @endforeach
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
 

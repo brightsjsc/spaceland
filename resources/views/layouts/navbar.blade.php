@@ -1,9 +1,9 @@
 <!-- Navbar -->
-<nav class="custom-navbar navbar navbar-expand-lg navbar-dark" role="navigation" style="background-color:#024073 !important">
+<nav class="custom-navbar navbar navbar-expand-lg navbar-dark" role="navigation" style="background-color:white !important">
     <div class="container">
         <div class="navbar-wrapper">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{asset('assets/img/logo.png')}}" alt="">
+                <img src="{{asset('assets/img/Logo (2).png')}}" alt="">
             </a>
         </div>
         <button
@@ -31,11 +31,11 @@
                             data-end-tag="true">
                             {{-- ^^ --}}
                             {{ $menu->title }}
-                        </a> 
+                        </a>
                         <?php $menus_2 = DB::table('menus')->where('parent_id', $menu->id)->get()
-                         
+
                         ?>
-                        
+
                         @if ($menus_2)
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach ($menus_2 as $menu_2)
@@ -61,16 +61,16 @@
                         {{ $productOfDistricts[2]['level']." ".$productOfDistricts[2]['name_local'] }}
                     </a>
                 </li>
-                <li class="menu-child">
-                    <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[3]['alias']]) }}">
+                {{-- <li class="menu-child">
+                    <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[4]['alias']]) }}">
                         {{ $productOfDistricts[3]['level']." ".$productOfDistricts[3]['name_local'] }}
                     </a>
-                </li>
-                <li class="menu-child">
+                </li> --}}
+                {{-- <li class="menu-child">
                     <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[4]['alias']]) }}">
                         {{ $productOfDistricts[4]['level']." ".$productOfDistricts[4]['name_local'] }}
                     </a>
-                </li>
+                </li> --}}
                 <li class="menu-child">
                     <a href="{{ route('intro')}}">
                         Liên Hệ

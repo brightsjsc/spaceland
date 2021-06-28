@@ -1,119 +1,118 @@
 @extends('layouts.index')
 
 @section('head_title')
-  {{ 'Kênh thông tin bất động sản cho thuê' }}
+    {{ 'Kênh thông tin bất động sản cho thuê' }}
 @endsection
 @section('image-page')
-    {{asset('uploads/images/bg1.jpg')}}
+    {{ asset('uploads/images/bg2.jpg') }}
 @endsection
 
 @section('content')
-@include('layouts.page-header')
+    @include('layouts.page-header')
     <div class="main-content">
-    <div class="top-category">
-        <div class="container content-container">
-        <h3 class="title-cate"> <a href="http://localhost:8000/quan/nam-tu-liem ">Cho Thuê Căn Hộ Hà Nội</a></h3>
-        <br>
-            <div class="row">
-            <div class="col-md-6 pdr-0" style="padding:0 !important">
-            <div class="place-big" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[0]['alias']]) }}'">
-                    <div class="place-img slick-initialized slick-slider">
-                        <div aria-live="polite" class="slick-list draggable">
-                            <div class="slick-track">
-
-                            <img src="{{asset('assets/img/cate/HCM-web-1.jpg')}}" width="100%">
+        <div class="top-category">
+            <div class="container content-container">
+                {{-- <h3 class="title-cate"> <a href="http://localhost:8000/quan/nam-tu-liem ">Cho Thuê Căn Hộ Hà Nội</a></h3> --}}
+                <br>
+                <div class="row" onclick="location.href='{{ URL::to('century') }}'">
+                    <div class="col-md-5 pdr-0" style="padding:0 !important">
+                        <div class="place-big">
+                            <div class="slick-initialized slick-slider">
+                                <div aria-live="polite" class="slick-list draggable">
+                                    <div class="slick-track">
+                                        <img src="{{ asset('assets/img/cate/Century_1.jpg') }}" width="99%">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="place-info rent-info" style="display: block;">
+                            {{-- <div class="place-info rent-info" style="display: block;">
                         <h3>
                             <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[0]['alias']]) }}" class="name-district">
                                 <span class="place-name">CC {{ $productOfDistricts[0]['level']." ".$productOfDistricts[0]['name_local'] }}</span>
                                 <span class="place-number">{{ $productOfDistricts[0]['num_product']." tin đăng" }}</span>
                             </a>
                         </h3>
+                    </div> --}}
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6 pdl-0">
-                <div class="place-small" >
-                    <div class="place-item nopadding" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[1]['alias']]) }}'">
-                        <div class="place-img slick-initialized slick-slider">
+                    <div class="col-md-7 pdl-0">
+                        <div class="place-small">
+                            <img src="{{ asset('assets/img/cate/Century_2.jpg') }}" width="49%" style="margin-right: 5px">
+                            {{-- <div class="place-item nopadding" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[1]['alias']]) }}'">
+                        <div class="slick-initialized slick-slider">
                             <div aria-live="polite" class="slick-list draggable">
                                 <div class="slick-track">
-                                    <img src="{{asset('assets/img/cate/anh2.jpg')}}" width="100%">
+                                    <img src="{{asset('assets/img/cate/Century_2.jpg')}}" width="98%">
                                 </div>
                             </div>
                         </div>
-                        <div class="place-info rent-info" style="display: block;">
-                            <h3>
-                                <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[1]['alias']]) }}" class="name-district">
-                                    <span class="place-name">CC {{ $productOfDistricts[1]['level']." ".$productOfDistricts[1]['name_local'] }}</span>
-                                    <span class="place-number">{{ $productOfDistricts[1]['num_product']." tin đăng" }}</span>
-                                </a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="place-item" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[2]['alias']]) }}'">
-                        <div class="place-img slick-initialized slick-slider">
+
+                    </div> --}}
+                            <img src="{{ asset('assets/img/cate/Century_3.jpg') }}" width="49%">
+
+                            {{-- <div class="place-item" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[2]['alias']]) }}'">
+                        <div class="slick-initialized slick-slider">
                             <div aria-live="polite" class="slick-list draggable">
                                 <div class="slick-track">
-                                    <img src="{{asset('assets/img/cate/anh3.jpg')}}" width="100%">
+                                    <img src="{{asset('assets/img/cate/Century_3.jpg')}}" width="101%">
                                 </div>
                             </div>
                         </div>
-                        <div class="place-info rent-info" style="display: block;">
-                            <h3>
-                                <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[2]['alias']]) }}" class="name-district">
-                                    <span class="place-name">CC {{ $productOfDistricts[2]['level']." ".$productOfDistricts[2]['name_local'] }}</span>
-                                    <span class="place-number">{{ $productOfDistricts[2]['num_product']." tin đăng" }}</span>
-                                </a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="place-item nopadding" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[3]['alias']]) }}'">
-                        <div class="place-img slick-initialized slick-slider">
+
+                    </div> --}}
+                            <img src="{{ asset('assets/img/cate/Century_4.jpg') }}" width="49%"
+                                style="margin-top: 25px;margin-right: 5px">
+                            <img src="{{ asset('assets/img/cate/Century_5.jpg') }}" width="49%" style="margin-top: 25px">
+
+
+                            {{-- <div class="place-item nopadding" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[3]['alias']]) }}'">
+                        <div class="slick-initialized slick-slider">
                             <div aria-live="polite" class="slick-list draggable">
                                 <div class="slick-track">
-                                    <img src="{{asset('assets/img/cate/anh4.jpg')}}" width="100%">
+                                    <img src="{{asset('assets/img/cate/Century_4.jpg')}}" width="98%">
                                 </div>
                             </div>
-                        </div>
-                        <div class="place-info rent-info" style="display: block;">
-                            <h3>
-                                <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[3]['alias']]) }}" class="name-district">
-                                    <span class="place-name">CC {{ $productOfDistricts[3]['level']." ".$productOfDistricts[3]['name_local'] }}</span>
-                                    <span class="place-number">{{ $productOfDistricts[3]['num_product']." tin đăng" }}</span>
-                                </a>
-                            </h3>
                         </div>
                     </div>
                     <div class="place-item" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[4]['alias']]) }}'">
-                        <div class="place-img slick-initialized slick-slider">
+                        <div class="slick-initialized slick-slider">
                             <div aria-live="polite" class="slick-list draggable">
                                 <div class="slick-track">
-                                    <img src="https://file4.batdongsan.com.vn/images/newhome/cities1/DNA-web-1.jpg" width="100%">
+                                    <img src="{{asset('assets/img/cate/Century_5.jpg')}}" width="101%">
                                 </div>
                             </div>
                         </div>
-                        <div class="place-info rent-info" style="display: block;">
-                            <h3>
-                                <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[4]['alias']]) }}" class="name-district">
-                                    <span class="place-name">CC {{ $productOfDistricts[4]['level']." ".$productOfDistricts[4]['name_local'] }}</span>
-                                    <span class="place-number">{{ $productOfDistricts[4]['num_product']." tin đăng" }}</span>
-                                </a>
-                            </h3>
+                    </div> --}}
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="row">
+                        <div class="col-sm" style="text-align: center">
+                            <img src="{{ asset('assets/img/Frame 9.png') }}" width="30%" style="margin-top: 20px">
+                            <img src="{{ asset('assets/img/Group 22.png') }}" width="72%" style="margin-top: 20px">
+                        </div>
+                        <div class="col-sm ">
+                            <img src="{{ asset('assets/img/Frame 10.png') }}" width="23%" style="margin-top: 25px">
+                            <br>
+                            <img src="{{ asset('assets/img/Group 23.png') }}" width="70%" style="margin-top: 20px">
+                        </div>
+                        <div class="col-sm ">
+                            <img src="{{ asset('assets/img/Frame 11.png') }}" width="23%" style="margin-top: 25px">
+                            <br>
+                            <img src="{{ asset('assets/img/Group 24.png') }}" width="65%" style="margin-top: 20px">
                         </div>
                     </div>
                 </div>
-                <div class="clear"></div>
+                <h4 style="margin-top: 20px; margin-left: -5px; color:#E65D26; font-weight: bold; font-style: italic;
+                        ">TIN TỨC MỚI NHẤT</h4>
             </div>
-        </div>
+
+
         </div>
 
-    </div>
-
-    <div class="bds-category">
+        {{-- <div class="bds-category">
         <div class="container" style="padding:30px 1.5rem;">
         @if (!empty($products))
 
@@ -122,7 +121,7 @@
                         Cho Thuê Căn Hộ {{ $productOfDistricts[0]['level']." ".$productOfDistricts[0]['name_local'] }}
                     </a></h3>
                         <div class="owl-carousel owl-theme" id="slider">
-                                    @foreach($products as $product)
+                                    @foreach ($products as $product)
                                     <div class=" item">
                                         <div class="item-content">
                                             <div class="image-product">
@@ -158,8 +157,8 @@
         @endif
 
         </div>
-    </div>
-    <div class="bds-category-1">
+    </div> --}}
+        {{-- <div class="bds-category-1">
         @if (!empty($products2))
         <div class="container" style="padding:30px 1.5rem;">
             <div class="row">
@@ -167,7 +166,7 @@
                         Cho Thuê Căn Hộ {{ $productOfDistricts[1]['level']." ".$productOfDistricts[1]['name_local'] }}
                     </a></h3>
                         <div class="owl-carousel owl-theme">
-                            @foreach($products2 as $product)
+                            @foreach ($products2 as $product)
                             <div class=" item">
                                 <div class="item-content">
                                     <div class="image-product">
@@ -201,8 +200,8 @@
             </div>
         </div>
                     @endif
-    </div>
-    <div class="bds-category">
+    </div> --}}
+        {{-- <div class="bds-category">
         @if (!empty($products3))
 
         <div class="container" style="padding:30px 1.5rem;">
@@ -211,7 +210,7 @@
                    Cho Thuê Căn Hộ {{ $productOfDistricts[2]['level']." ".$productOfDistricts[2]['name_local'] }}
                 </a></h3>
                         <div class="owl-carousel owl-theme">
-                            @foreach($products3 as $product)
+                            @foreach ($products3 as $product)
                             <div class=" item">
                                 <div class="item-content">
                                     <div class="image-product">
@@ -245,8 +244,8 @@
             </div>
         </div>
         @endif
-    </div>
-    <div class="bds-category-1" >
+    </div> --}}
+        {{-- <div class="bds-category-1" >
         @if (!empty($products4))
         <div class="container" style="padding:30px 1.5rem;">
             <div class="row">
@@ -254,7 +253,7 @@
                     Cho Thuê Căn Hộ {{ $productOfDistricts[3]['level']." ".$productOfDistricts[3]['name_local'] }}
                 </a></h3>
                     <div class="owl-carousel owl-theme">
-                        @foreach($products4 as $product)
+                        @foreach ($products4 as $product)
                         <div class=" item">
                             <div class="item-content">
                                 <div class="image-product">
@@ -287,11 +286,20 @@
             </div>
         </div>
         @endif
+    </div> --}}
     </div>
     </div>
     </div>
-</div>
-@include('layouts.footer-static')
+    {{-- <div class="place-info rent-info" style="display: block;">
+                            <h3>
+                                <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[3]['alias']]) }}" class="name-district">
+                                    <span class="place-name">CC {{ $productOfDistricts[3]['level']." ".$productOfDistricts[3]['name_local'] }}</span>
+                                    <span class="place-number">{{ $productOfDistricts[3]['num_product']." tin đăng" }}</span>
+                                </a>
+                            </h3>
+                        </div> --}}
+    <br>
+    @include('layouts.footer-static')
 @endsection
 <script src="{{ asset('js/home.js') }}"></script>
 @section('script')

@@ -4,7 +4,7 @@
       <div class="footer-col-1 col-xs-12 col-md-5">
         {{-- <h4 class="footer-title">thuechungcuhn.me</h4> --}}
         <a href="">
-        <img src="{{asset('assets/img/logo.png')}}" alt="">
+        <img src="{{asset('assets/img/Logo (2).png')}}" alt="">
         </a>
         <ul>
           <li>
@@ -29,21 +29,21 @@
                 <h4 class="footer-title">Về chúng tôi</h4>
                 <ul>
                   <li>
-                    <a href="#">Báo giá & hỗ trợ</a> 
+                    <a href="#">Báo giá & hỗ trợ</a>
                   </li>
                   <li>
-                    <a href="#">Câu hỏi thường gặp</a> 
+                    <a href="#">Câu hỏi thường gặp</a>
                   </li>
                   <li>
-                    <a href="#">Về chúng tôi</a> 
+                    <a href="#">Về chúng tôi</a>
                   </li>
                   <li>
-                    <a href="#">Liên hệ</a> 
+                    <a href="#">Liên hệ</a>
                   </li>
                 </ul>
               </div>
           </div>
-          
+
           <div clas="col-xs-12 col-md-6">
             <div class="footer-block">
           <h4 class="footer-title">Chung cư theo quận</h4>

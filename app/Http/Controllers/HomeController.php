@@ -501,4 +501,8 @@ class HomeController extends Controller
         $getDistrict = District::where('city_id','01')->get();
         return view('pages.contactpage',compact('getDistrict'));
     }
+
+    public function century(){
+        return view('pages.century');
+    }
 }

@@ -171,7 +171,7 @@ h1.card-title {
 
 @media (min-width: 64em) {
   .page-header {
-    background-image: url(/assets/img/bg1.jpg);
+    background-image: url(/assets/img/background_1.png);
   }
 }
 
@@ -845,7 +845,7 @@ h1.card-title {
   float: left;
   position: relative;
   width: 99%;
-  max-height: 370px;
+  max-height: 600px;
   overflow: hidden;
   margin-left: 2%;
 }
@@ -867,6 +867,19 @@ h1.card-title {
 
 .place-img {
   position: relative;
+}
+
+.information {
+  height: 250px;
+  margin-left: -5px;
+  width: 1112px;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, .55) url(/assets/img/cate/image6.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-blend-mode: darken;
 }
 
 .place-img:after {
@@ -2385,9 +2398,11 @@ h1.card-title {
     display: none !important;
   }
   .menu-mobile-area ul li a {
-    color: #fff !important;
-    font-weight: 500;
+    color: #CB2026 !important;
+    font-weight: 600;
     padding: 5px 3px;
+    font-size: 16px;
+    line-height: 23.44px;
   }
   .menu-mobile-area ul li a.dropdown-item {
     color: #333 !important;

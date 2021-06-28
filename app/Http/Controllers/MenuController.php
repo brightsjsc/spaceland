@@ -167,13 +167,14 @@ class MenuController extends Controller
     public function delete($id)
     {
         $parent = Menu::where('parent_id',$id)->count();
-        
+
         if($parent == 0){
             $category = Menu::find($id);
             $category -> delete();
             return redirect()->route('admin.system.menu.index')->with('result','Bạn đã xóa thành công!');
         }else{
-            return redirect()->route('admin.system.menu.index')->with('result','Bạn không thể xóa menu khi tồn tại menu con!');            
+            return redirect()->route('admin.system.menu.index')->with('result','Bạn không thể xóa menu khi tồn tại menu con!');
         }
     }
+
 }

@@ -266,7 +266,7 @@
                                 <span><b>Hotline</b></span>
                                 <!--<span>{{ $product->contact_mobile }}</span>-->
                                 <span>0969856985</span>
-                               
+
                             </div>
                         </div>
                     </div>

@@ -259,13 +259,13 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-5">
-                                <a href="tel:0969856985"><img
+                                <a href="tel:0913144599"><img
                                         src="{{asset('assets/img/icon-hotline.gif')}}" width="100%" alt=""></a>
                             </div>
                             <div class="col-7" style="padding:0">
                                 <span><b>Hotline</b></span>
                                 <!--<span>{{ $product->contact_mobile }}</span>-->
-                                <span>0969856985</span>
+                                <span></span>
 
                             </div>
                         </div>

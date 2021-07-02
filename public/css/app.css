@@ -2404,6 +2404,7 @@ h1.card-title {
     font-size: 16px;
     line-height: 23.44px;
   }
+
   .menu-mobile-area ul li a.dropdown-item {
     color: #333 !important;
   }
@@ -2413,6 +2414,19 @@ h1.card-title {
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05), 0 7px 10px -5px rgba(0, 0, 0, 0.1);
   }
   .menu-mobile-area ul li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .menu-mobile-area-2 ul li a {
+    color: white !important;
+    font-weight: 600;
+    padding: 5px 3px;
+    font-size: 16px;
+    line-height: 23.44px;
+  }
+
+  .menu-mobile-area-2 ul li {
     display: inline-block;
     margin: 0 5px;
   }

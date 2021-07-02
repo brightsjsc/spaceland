@@ -9,6 +9,7 @@ use App\ProductCate;
 use App\Product;
 use App\Project;
 use App\District;
+use App\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
@@ -33,15 +34,17 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $products   = Product::getProductByDistrict('021');
-        $products2  = Product::getProductByDistrict('019');
-        $products3  = Product::getProductByDistrict('005');
-        $products4  = Product::getProductByDistrict('009');
+        // $products   = Product::getProductByDistrict('021');
+        // $products2  = Product::getProductByDistrict('019');
+        // $products3  = Product::getProductByDistrict('005');
+        // $products4  = Product::getProductByDistrict('009');
+
+        $projects = DB::table('projects')->orderBy('id', 'DESC')->take(5)->get();
 
         $post = DB::table('posts')->orderBy('created_at', 'DESC')->take(3)->get();
-        // return response()->json($post);
+        // return response()->json($projects);
 
-        return view('pages.home',compact('products','products2','products3','products4','post'));
+        return view('pages.home',compact('post','projects'));
     }
 
     /**
@@ -506,7 +509,13 @@ class HomeController extends Controller
         return view('pages.contactpage',compact('getDistrict'));
     }
 
-    public function century(){
-        return view('pages.century');
+    public function projectDetail($id){
+        $project = Project::findOrFail($id);
+        return view('pages.century', compact('project'));
+    }
+
+    public function postDetail($id){
+        $post = Post::findOrFail($id);
+        return view('pages.post_detail', compact('post'));
     }
 }

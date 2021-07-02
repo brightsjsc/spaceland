@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\View;
 use App\Menu;
 use App\District;
 use App\Product;
+use App\ProductCate;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         //Danh sách menu
-        $menus = Menu::where('parent_id',0)->where('prioritize',0)->where('status',0)->get();
+        $menus = ProductCate::where('parent_id',0)->where('prioritize',0)->where('status',0)->get();
 
         //Lấy danh sách các Quận tại Hà Nội [city_id = 01]
         $districts = District::where('city_id','01')->get()->toArray();

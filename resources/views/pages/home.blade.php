@@ -14,13 +14,15 @@
             <div class="container content-container">
                 {{-- <h3 class="title-cate"> <a href="http://localhost:8000/quan/nam-tu-liem ">Cho Thuê Căn Hộ Hà Nội</a></h3> --}}
                 <br>
-                <div class="row" onclick="location.href='{{ URL::to('century') }}'">
+                <div class="row">
                     <div class="col-md-5 pdr-0" style="padding:0 !important">
                         <div class="place-big">
                             <div class="slick-initialized slick-slider">
                                 <div aria-live="polite" class="slick-list draggable">
-                                    <div class="slick-track">
-                                        <img src="{{ asset('assets/img/cate/Century_1.jpg') }}" width="99%">
+                                    <div class="slick-track"
+                                        onclick="location.href='{{ URL::to('project/detail/' . $projects[0]->id) }}'">
+                                        <img src="{{ asset('/uploads/images/projects/' . $projects[0]->thumbnail_img) }}"
+                                            width="570" height="465">
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +38,9 @@
                     </div>
                     <div class="col-md-7 pdl-0">
                         <div class="place-small">
-                            <img src="{{ asset('assets/img/cate/Century_2.jpg') }}" width="49%" style="margin-right: 5px">
+                            <img src="{{ asset('/uploads/images/projects/' . $projects[1]->thumbnail_img) }}" width="310"
+                                height="220" style="margin-right: 7px"
+                                onclick="location.href='{{ URL::to('project/detail/' . $projects[1]->id) }}'">
                             {{-- <div class="place-item nopadding" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[1]['alias']]) }}'">
                         <div class="slick-initialized slick-slider">
                             <div aria-live="polite" class="slick-list draggable">
@@ -47,7 +51,9 @@
                         </div>
 
                     </div> --}}
-                            <img src="{{ asset('assets/img/cate/Century_3.jpg') }}" width="49%">
+                            <img src="{{ asset('/uploads/images/projects/' . $projects[2]->thumbnail_img) }}" width="310"
+                                height="220"
+                                onclick="location.href='{{ URL::to('project/detail/' . $projects[2]->id) }}'">
 
                             {{-- <div class="place-item" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[2]['alias']]) }}'">
                         <div class="slick-initialized slick-slider">
@@ -59,9 +65,12 @@
                         </div>
 
                     </div> --}}
-                            <img src="{{ asset('assets/img/cate/Century_4.jpg') }}" width="49%"
-                                style="margin-top: 25px;margin-right: 5px">
-                            <img src="{{ asset('assets/img/cate/Century_5.jpg') }}" width="49%" style="margin-top: 25px">
+                            <img src="{{ asset('/uploads/images/projects/' . $projects[3]->thumbnail_img) }}" width="310"
+                                height="220" style="margin-top: 25px;margin-right: 7px"
+                                onclick="location.href='{{ URL::to('project/detail/' . $projects[3]->id) }}'">
+                            <img src="{{ asset('/uploads/images/projects/' . $projects[4]->thumbnail_img) }}" width="310"
+                                height="220" style="margin-top: 25px "
+                                onclick="location.href='{{ URL::to('project/detail/' . $projects[4]->id) }}'">
 
 
                             {{-- <div class="place-item nopadding" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[3]['alias']]) }}'">
@@ -107,12 +116,14 @@
                 </div>
                 <div class="news">
                     <h4 style="margin-top: 30; margin-left: -5px; color:#E65D26; font-weight: bold; font-style: italic;
-                    ">TIN TỨC MỚI NHẤT</h4>
+                                    " id="news">TIN TỨC MỚI NHẤT</h4>
                     <div>
                         <div class="row">
                             @foreach ($post as $value)
-                                <div class="col-sm"><img src="{{ asset('uploads/images/posts/' . $value->image) }}"
-                                        alt="" width="350" height="300">
+                                <div class="col-sm"
+                                    onclick="location.href='{{ URL::to('post/detail/' . $value->id) }}'"><img
+                                        src="{{ asset('uploads/images/posts/' . $value->image) }}" alt="" width="350"
+                                        height="300">
                                     <br>
                                     {{ $value->title }}
                                 </div>

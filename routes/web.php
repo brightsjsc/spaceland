@@ -28,7 +28,9 @@ Route::get('/quan/{district}', 'HomeController@productsOfDistrict')->name('produ
 Route::get('tim-kiem', 'HomeController@filter')->name('filter');
 Route::get('lien-he', 'HomeController@intro')->name('intro');
 
-Route::get('century', 'HomeController@century')->name('century');
+Route::get('project/detail/{project_ID}', 'HomeController@projectDetail')->name('century');
+Route::get('post/detail/{post_ID}', 'HomeController@postDetail');
+
 
 Route::prefix('ajax')->group(function () {
     Route::post('/getProductCateOfKeyword', 'AjaxController@getProductCateOfKeyword');

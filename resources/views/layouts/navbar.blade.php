@@ -30,23 +30,22 @@
                             aria-expanded="false"
                             data-end-tag="true">
                             {{-- ^^ --}}
-                            {{ $menu->title }}
+                            {{ $menu->name }}
                         </a>
-                        <?php $menus_2 = DB::table('menus')->where('parent_id', $menu->id)->get()
-
+                        <?php $menus_2 = DB::table('product_cates')->where('parent_id', $menu->id)->get()
                         ?>
 
                         @if ($menus_2)
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach ($menus_2 as $menu_2)
-                                    <a class="dropdown-item" style="padding: 7px 22px" href="{{ $menu_2->url }}">{{ $menu_2->title }}</a>
+                                    <a class="dropdown-item" style="padding: 7px 22px" href="{{URL::to('bat-dong-san/'.$menu_2->alias)}}">{{ $menu_2->name }}</a>
                                 @endforeach
                             </div>
                         @endif
                     </li>
                 @endforeach
 
-                <li class="menu-child">
+                {{-- <li class="menu-child">
                     <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[0]['alias']]) }} ">
                         {{ $productOfDistricts[0]['level']." ".$productOfDistricts[0]['name_local'] }}
                     </a>
@@ -60,7 +59,7 @@
                     <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[2]['alias']]) }}">
                         {{ $productOfDistricts[2]['level']." ".$productOfDistricts[2]['name_local'] }}
                     </a>
-                </li>
+                </li> --}}
                 {{-- <li class="menu-child">
                     <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[4]['alias']]) }}">
                         {{ $productOfDistricts[3]['level']." ".$productOfDistricts[3]['name_local'] }}
@@ -72,7 +71,12 @@
                     </a>
                 </li> --}}
                 <li class="menu-child">
-                    <a href="{{ route('intro')}}">
+                    <a href="{{'/'}}#news">
+                       Tin tức
+                    </a>
+                </li>
+                <li class="menu-child">
+                    <a href="#footer-static">
                         Liên Hệ
                     </a>
                 </li>
@@ -84,7 +88,7 @@
             <ul class="menu-mobile list-style-none">
                 @foreach ($menus as $menu)
                     <li class="menu-child dropdown">
-                        <?php $menus_2 = DB::table('menus')->where('parent_id', $menu->id)->get() ?>
+                        <?php $menus_2 = DB::table('product_cates')->where('parent_id', $menu->id)->get() ?>
                         <?php
                         $milisecond = round(time() * 1000);
                         $randNumber = rand(1, 10000);
@@ -101,21 +105,21 @@
                             aria-expanded="false"
                             data-end-tag="true">
                             {{-- ^^ --}}
-                            {{ $menu->title }}
+                            {{ $menu->name }}
                             <b class="caret"></b>
                         </a>
 
                         @if ($menus_2)
                             <div class="collapse" id="{{$idRandom}}">
                                 @foreach ($menus_2 as $menu_2)
-                                    <a class="" style="padding-left: 30px" href="{{ $menu_2->url }}">{{ $menu_2->title }}</a>
+                                <a class="dropdown-item" style="padding: 7px 22px" href="{{URL::to('bat-dong-san/'.$menu_2->alias)}}">{{ $menu_2->name }}</a>
                                 @endforeach
                             </div>
                         @endif
                     </li>
                 @endforeach
 
-                <li class="menu-child">
+                {{-- <li class="menu-child">
                     <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[0]['alias']]) }} ">
                         {{ $productOfDistricts[0]['level']." ".$productOfDistricts[0]['name_local'] }}
                     </a>
@@ -139,7 +143,7 @@
                     <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[4]['alias']]) }}">
                         {{ $productOfDistricts[4]['level']." ".$productOfDistricts[4]['name_local'] }}
                     </a>
-                </li>
+                </li> --}}
 
             </ul>
         </div>

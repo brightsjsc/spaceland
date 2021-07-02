@@ -1,4 +1,4 @@
-<footer class="footer-static">
+<footer class="footer-static" id="footer-static">
   <div class="container">
     <div class="row footer-top">
       <div class="footer-col-1 col-xs-12 col-md-5">
@@ -38,7 +38,7 @@
                     <a href="#">Về chúng tôi</a>
                   </li>
                   <li>
-                    <a href="{{}}">Liên hệ</a>
+                    <a href="#">Liên hệ</a>
                   </li>
                 </ul>
               </div>
@@ -46,7 +46,7 @@
 
           <div clas="col-xs-12 col-md-6">
             <div class="footer-block">
-          <h4 class="footer-title">Chung cư theo quận</h4>
+          <h4 class="footer-title">Chung cư theo khu vực</h4>
           @include('layouts.footer-menu')
         </div>
           </div>

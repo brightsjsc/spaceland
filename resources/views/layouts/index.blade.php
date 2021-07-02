@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link  href="{{asset('fotorama/fotorama.css')}}" rel="stylesheet">
     <script src="{{asset('fotorama/fotorama.js')}}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -57,15 +58,19 @@
 
 <div class="fixed_mobile">
     <div class="action_mobile_footer">
-        <a href="tel:0969856985">
+        <a href="tel:0913144599">
             <div class="image_phone">
                 <img src="{{asset('uploads/images/icon-hotline.gif')}}" alt="phone">
             </div>
-            <span>0969856985</span>
+            <span></span>
         </a>
+
     </div>
 </div>
+
 <!-- Core JS Files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
 <script src="{{asset('js/common.js')}}"></script>

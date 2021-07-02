@@ -167,11 +167,11 @@
                                                 @endif
                                             </td>
 
-                                            {{-- <td class="td-actions text-center">
+                                            <td class="td-actions text-center">
                                                 @if ($product['project_id'])
                                                     {{ $product->project['name'] }}
                                                 @endif
-                                            </td> --}}
+                                            </td>
                                             <td style="width: 100px">
                                                 {{ date('d/m/Y', strtotime($product['created_at'])) }}</td>
                                             <td class="td-actions text-center">

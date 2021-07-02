@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    
+
     <form action="{{ route('admin.productCate.update',['id' => $category['id']]) }}" method="POST">
       @csrf
       <div class="row">
@@ -194,7 +194,7 @@
                             <div class="form-group">
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" name="is_menu" type="radio" 
+                                  <input class="form-check-input" name="is_menu" type="radio"
                                     @if($category['is_menu'] == 0) checked @endif value="0"> ON
                                   <span class="circle">
                                     <span class="check"></span>
@@ -203,7 +203,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" name="is_menu" type="radio" 
+                                  <input class="form-check-input" name="is_menu" type="radio"
                                     @if($category['is_menu'] == 1) checked @endif value="1"> OFF
                                   <span class="circle">
                                     <span class="check"></span>
@@ -229,7 +229,7 @@
                             <div class="form-group">
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" name="prioritize" type="radio" 
+                                  <input class="form-check-input" name="prioritize" type="radio"
                                     @if($category['prioritize'] == 0) checked @endif value="0"> ON
                                   <span class="circle">
                                     <span class="check"></span>
@@ -238,7 +238,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" name="prioritize" type="radio" 
+                                  <input class="form-check-input" name="prioritize" type="radio"
                                     @if($category['prioritize'] == 1) checked @endif value="1"> OFF
                                   <span class="circle">
                                     <span class="check"></span>
@@ -264,7 +264,7 @@
                             <div class="form-group">
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" name="status" type="radio" 
+                                  <input class="form-check-input" name="status" type="radio"
                                     @if($category['status'] == 0) checked @endif value="0"> ON
                                   <span class="circle">
                                     <span class="check"></span>
@@ -273,7 +273,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" name="status" type="radio" 
+                                  <input class="form-check-input" name="status" type="radio"
                                     @if($category['status'] == 1) checked @endif value="1"> OFF
                                   <span class="circle">
                                     <span class="check"></span>
@@ -294,7 +294,7 @@
                   </div>
                 </div>
               </div>
-              <!-- end content-->          
+              <!-- end content-->
             </div>
             <!--  end card  -->
           </div>
@@ -307,7 +307,7 @@
                 <!-- </div> -->
               </div>
               <div class="dropdown-divider"></div>
-              
+
               <div class="card-body">
                 <div class="col-md-12 text-center">
                   <button type="submit" class="btn btn-success" style="padding: 10px 25px"><i class="material-icons">check</i> Lưu</button>
@@ -326,7 +326,7 @@
 @section('script')
   <!--  Plugin for Sweet Alert -->
   <script src="{{ asset('assets/js/plugins/sweetalert2.js') }}"></script>
-  
+
   @if(session('result'))
     <script type="text/javascript">
       $(document).ready(function() {
@@ -337,7 +337,7 @@
           confirmButtonClass: "btn btn-success",
           buttonsStyling: false
         });
-      }); 
+      });
     </script>
   @endif
 @endsection

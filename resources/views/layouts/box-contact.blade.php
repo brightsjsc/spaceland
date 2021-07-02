@@ -7,9 +7,9 @@
         <img src="{{asset('uploads/images/icon-hotline.gif')}}" alt="phone">
             <span>Thuechungcuhn</span>
             <span class="phonenumber">
-                <a href="tel:0969856985">0969856985</a>
+                <a href="tel:0913144599"></a>
             </span>
-        
+
     </div>
     <div class="chat-box">
         <img src="{{asset('uploads/images/chat-icon.gif')}}" alt="chat">

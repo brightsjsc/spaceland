@@ -1,7 +1,7 @@
 <div class="sidebar" data-color="orange" data-background-color="black">
-	<!-- 
+	<!--
     Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-		Tip 2: you can also add an image using data-image tag 
+		Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
       <a href="{{ route('admin.dashboard') }}" class="simple-text logo-mini">  </a>
@@ -43,7 +43,7 @@
           <p> Liên Hệ </p>
         </a>
       </li>
-       <li 
+       <li
         @if ($model == 'product-cate' || $model == 'product')
           class="nav-item active"
         @else
@@ -52,11 +52,11 @@
       >
         <a class="nav-link" data-toggle="collapse" href="#pagesProduct">
           <i class="material-icons">category</i>
-          <p> Bất động sản 
+          <p> Bất động sản
             <b class="caret"></b>
           </p>
         </a>
-        <div id="pagesProduct" 
+        <div id="pagesProduct"
           @if ($model == 'product-cate' || $model == 'project' || $model == 'product')
               class="collapse show"
           @else
@@ -64,7 +64,7 @@
           @endif
         >
           <ul class="nav">
-            <li 
+            <li
               @if( $model == 'product-cate' )
                   class="nav-item active"
               @else
@@ -77,7 +77,7 @@
               </a>
             </li>
 
-            <li 
+            <li
               @if( $model == 'project' )
                   class="nav-item active"
               @else
@@ -90,7 +90,7 @@
               </a>
             </li>
 
-            <li 
+            <li
               @if( $model == 'product' )
                   class="nav-item active"
               @else
@@ -106,9 +106,9 @@
         </div>
       </li>
 
-    
 
-      <li 
+
+      <li
         @if( $model == 'system' )
           class="nav-item active"
         @else
@@ -121,7 +121,7 @@
             <b class="caret"></b>
           </p>
         </a>
-        <div id="pagesExamples" 
+        <div id="pagesExamples"
           @if( $model == 'system' )
               class="collapse show"
           @else
@@ -129,7 +129,7 @@
           @endif
         >
           <ul class="nav">
-            <li 
+            <li
               @if( $model_child == 'user' )
                   class="nav-item active"
               @else
@@ -141,7 +141,7 @@
                 <span class="sidebar-normal"> Người dùng hệ thống </span>
               </a>
             </li>
-            
+
             <li
               @if( $model_child == 'role' )
                   class="nav-item active"
@@ -168,13 +168,13 @@
               </a>
             </li>
 
-           
+
           </ul>
         </div>
       </li>
 
-     
-      <li 
+
+      <li
         @if ($model == 'post-category' || $model == 'post')
           class="nav-item active"
         @else
@@ -187,7 +187,7 @@
             <b class="caret"></b>
           </p>
         </a>
-        <div id="pagesPost" 
+        <div id="pagesPost"
           @if ($model == 'post-category' || $model == 'post')
               class="collapse show"
           @else
@@ -195,7 +195,7 @@
           @endif
         >
           <ul class="nav">
-            <li 
+            <li
               @if( $model == 'post-category' )
                   class="nav-item active"
               @else
@@ -207,7 +207,7 @@
                 <span class="sidebar-normal"> Danh mục </span>
               </a>
             </li>
-            
+
             <li
               @if( $model == 'post' )
                   class="nav-item active"

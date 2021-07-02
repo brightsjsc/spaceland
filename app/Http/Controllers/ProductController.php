@@ -147,7 +147,7 @@ class ProductController extends Controller
             } else {
                 $imgName = '';
             }
-
+            // return response()->json($imgName);
             $gallerys = $request->file('gallery');
             $gallerylist = array();
             if ($gallerys != null) {
@@ -158,7 +158,7 @@ class ProductController extends Controller
                     }
                     $gallerylist[] = $galleryName;
                 }
-                $gallery_prod = implode($gallerylist, '|');
+                $gallery_prod = implode( '|',$gallerylist);
             } else {
                 $gallery_prod = '';
             }
@@ -321,7 +321,7 @@ class ProductController extends Controller
                     }
                     $gallerylist[] = $galleryName;
                 }
-                $gallery_prod = implode($gallerylist, '|');
+                $gallery_prod = implode( '|',$gallerylist);
             } else {
                 $gallery_prod = '';
             }

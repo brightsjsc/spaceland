@@ -8,7 +8,7 @@
                         <div class="home-search-control row">
                             <div class="search-cate col-md-3 col-6 pd5">
                                 <div class="select-custom ">
-                                    <input type="text" id="product-cate" placeholder="Loại bất động sản" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="product_cate" class="ui-autocomplete-input">
+                                    <input type="text" id="product-cate" placeholder="Danh mục" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="product_cate" class="ui-autocomplete-input">
 
                                     <div class="search-product-cate">
                                         <ul class="ul-result-product-cate">

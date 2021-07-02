@@ -26,14 +26,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="place-info rent-info" style="display: block;">
-                        <h3>
-                            <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[0]['alias']]) }}" class="name-district">
-                                <span class="place-name">CC {{ $productOfDistricts[0]['level']." ".$productOfDistricts[0]['name_local'] }}</span>
-                                <span class="place-number">{{ $productOfDistricts[0]['num_product']." tin đăng" }}</span>
-                            </a>
-                        </h3>
-                    </div> --}}
+
                         </div>
                     </div>
                     <div class="col-md-7 pdl-0">
@@ -41,30 +34,11 @@
                             <img src="{{ asset('/uploads/images/projects/' . $projects[1]->thumbnail_img) }}" width="310"
                                 height="220" style="margin-right: 7px"
                                 onclick="location.href='{{ URL::to('project/detail/' . $projects[1]->id) }}'">
-                            {{-- <div class="place-item nopadding" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[1]['alias']]) }}'">
-                        <div class="slick-initialized slick-slider">
-                            <div aria-live="polite" class="slick-list draggable">
-                                <div class="slick-track">
-                                    <img src="{{asset('assets/img/cate/Century_2.jpg')}}" width="98%">
-                                </div>
-                            </div>
-                        </div>
 
-                    </div> --}}
                             <img src="{{ asset('/uploads/images/projects/' . $projects[2]->thumbnail_img) }}" width="310"
                                 height="220"
                                 onclick="location.href='{{ URL::to('project/detail/' . $projects[2]->id) }}'">
 
-                            {{-- <div class="place-item" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[2]['alias']]) }}'">
-                        <div class="slick-initialized slick-slider">
-                            <div aria-live="polite" class="slick-list draggable">
-                                <div class="slick-track">
-                                    <img src="{{asset('assets/img/cate/Century_3.jpg')}}" width="101%">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> --}}
                             <img src="{{ asset('/uploads/images/projects/' . $projects[3]->thumbnail_img) }}" width="310"
                                 height="220" style="margin-top: 25px;margin-right: 7px"
                                 onclick="location.href='{{ URL::to('project/detail/' . $projects[3]->id) }}'">
@@ -72,25 +46,6 @@
                                 height="220" style="margin-top: 25px "
                                 onclick="location.href='{{ URL::to('project/detail/' . $projects[4]->id) }}'">
 
-
-                            {{-- <div class="place-item nopadding" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[3]['alias']]) }}'">
-                        <div class="slick-initialized slick-slider">
-                            <div aria-live="polite" class="slick-list draggable">
-                                <div class="slick-track">
-                                    <img src="{{asset('assets/img/cate/Century_4.jpg')}}" width="98%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="place-item" onclick="location.href='{{route('productsOfDistrict',['district' => $productOfDistricts[4]['alias']]) }}'">
-                        <div class="slick-initialized slick-slider">
-                            <div aria-live="polite" class="slick-list draggable">
-                                <div class="slick-track">
-                                    <img src="{{asset('assets/img/cate/Century_5.jpg')}}" width="101%">
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                         </div>
 
                         <div class="clear"></div>

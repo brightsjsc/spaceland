@@ -9,7 +9,7 @@
 
 @section('content')
     <div style="filter: brightness(65%);">
-        <img src="{{ asset('/uploads/images/projects/' . $project->background_img) }}" width="100%" height="250">
+        <img src="{{ asset('/uploads/images/projects/' . $project->background_img) }}" width="100%" height="300">
     </div>
     <div class="container">
         <div class="text-center" id="Century">

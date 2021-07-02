@@ -6,7 +6,7 @@
                 <div class="home-search-tool">
                     <div class="home-search-content">
                         <div class="home-search-control row">
-                            <div class="search-cate col-md-3 col-6 pd5">
+                            <div class="search-cate col-md-10 col-6 pd5">
                                 <div class="select-custom ">
                                     <input type="text" id="product-cate" placeholder="Danh mục" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="product_cate" class="ui-autocomplete-input">
 
@@ -17,7 +17,7 @@
                                 </div>
                             </div>
 
-                            <div class="search-cate col-md-2 col-6 pd5">
+                            <div class="search-cate col-md-2 col-6 pd5" hidden>
                                 <div class="select-custom">
                                     <input type="text" id="district" placeholder="Quận/Huyện" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="district" class="ui-autocomplete-input">
 
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
 
-                            <div class="search-cate col-md-3 col-6 pd5">
+                            <div class="search-cate col-md-3 col-6 pd5" hidden>
                                 <div class="select-custom">
                                     <input type="text" id="projects" placeholder="Dự án" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="projects" class="ui-autocomplete-input">
 
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
 
-                            <div class="search-cate col-md-2 col-6 pd5">
+                            <div class="search-cate col-md-2 col-6 pd5" hidden>
                                 <div class="select-custom">
                                     <input type="text" id="acreage" placeholder="Diện tích" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="acreage" class="ui-autocomplete-input">
 

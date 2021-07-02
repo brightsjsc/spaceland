@@ -1,14 +1,12 @@
 <!-- Navbar -->
-<nav class="custom-navbar navbar navbar-expand-lg navbar-dark" role="navigation" style="background-color:#024073 !important">
-    <div class="navbar-wrapper" >
+<nav class="custom-navbar navbar navbar-expand-lg navbar-dark" role="navigation"
+    style="background-color:#024073 !important" id="navbar" hidden>
+    <div class="navbar-wrapper">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{asset('assets/img/Logo (2).png')}}" alt="" style="width:250; margin-left:100">
+            <img src="{{ asset('assets/img/Logo (2).png') }}" alt="" style="width:250; margin-left:100">
         </a>
     </div>
-    <button
-        class="button-open-menu-mobile"
-        type="button"
-        data-end-tag="true">
+    <button class="button-open-menu-mobile" type="button" data-end-tag="true">
         {{-- ^^ --}}
         <span class="sr-only">Toggle navigation</span>
         <span class="navbar-toggler-icon icon-bar"></span>
@@ -68,7 +66,7 @@
     </div>
     <div class="container">
 
-{{--        mobile --}}
+        {{-- mobile --}}
         <div class="menu-mobile-area d-lg-none">
             <span class="fa fa-times menu-mobile-close"></span>
             <ul class="menu-mobile list-style-none">
@@ -118,59 +116,75 @@
                     </a>
                 </li>
                 {{-- <li class="menu-child">
-                    <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[0]['alias']]) }} ">
-                        {{ $productOfDistricts[0]['level']." ".$productOfDistricts[0]['name_local'] }}
-                    </a>
-                </li>
-                <li class="menu-child">
-                    <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[1]['alias']]) }}">
-                        {{ $productOfDistricts[1]['level']." ".$productOfDistricts[1]['name_local'] }}
-                    </a>
-                </li>
-                <li class="menu-child">
-                    <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[2]['alias']]) }}">
-                        {{ $productOfDistricts[2]['level']." ".$productOfDistricts[2]['name_local'] }}
-                    </a>
-                </li>
-                <li class="menu-child">
-                    <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[3]['alias']]) }}">
-                        {{ $productOfDistricts[3]['level']." ".$productOfDistricts[3]['name_local'] }}
-                    </a>
-                </li>
-                <li class="menu-child">
-                    <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[4]['alias']]) }}">
-                        {{ $productOfDistricts[4]['level']." ".$productOfDistricts[4]['name_local'] }}
-                    </a>
-                </li> --}}
+                        <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[0]['alias']]) }} ">
+                            {{ $productOfDistricts[0]['level']." ".$productOfDistricts[0]['name_local'] }}
+                        </a>
+                    </li>
+                    <li class="menu-child">
+                        <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[1]['alias']]) }}">
+                            {{ $productOfDistricts[1]['level']." ".$productOfDistricts[1]['name_local'] }}
+                        </a>
+                    </li>
+                    <li class="menu-child">
+                        <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[2]['alias']]) }}">
+                            {{ $productOfDistricts[2]['level']." ".$productOfDistricts[2]['name_local'] }}
+                        </a>
+                    </li>
+                    <li class="menu-child">
+                        <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[3]['alias']]) }}">
+                            {{ $productOfDistricts[3]['level']." ".$productOfDistricts[3]['name_local'] }}
+                        </a>
+                    </li>
+                    <li class="menu-child">
+                        <a href="{{ route('productsOfDistrict',['district' => $productOfDistricts[4]['alias']]) }}">
+                            {{ $productOfDistricts[4]['level']." ".$productOfDistricts[4]['name_local'] }}
+                        </a>
+                    </li> --}}
 
             </ul>
         </div>
     </div>
 </nav>
+
 <!-- End Navbar -->
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-        $(".button-open-menu-mobile").on('click', function(){
+        $(".button-open-menu-mobile").on('click', function() {
             $(".menu-mobile-background").show();
 
             $(".menu-mobile-area").addClass('open');
 
             $(".menu-mobile-background").animate({
-                'opacity' : '1'
+                'opacity': '1'
             }, 300);
         });
-        $(".menu-mobile-close, .menu-mobile-background").on('click', function(){
+        $(".menu-mobile-close, .menu-mobile-background").on('click', function() {
             $(".menu-mobile-area").removeClass('open');
 
 
             $(".menu-mobile-background").animate({
-                'opacity' : '0'
+                'opacity': '0'
             }, 300);
 
-            setTimeout(function(){
+            setTimeout(function() {
                 $(".menu-mobile-background").hide();
             }, 300);
         });
         // $(".menu-mobile-close").hide();
     });
+</script>
+
+<script>
+    var firstScrollps = window.pageYOffset;
+    window.onscroll = function() {
+        // alert(window.pageYOffset);
+        var currentScrollPos = window.pageYOffset;
+        if (currentScrollPos < 230) {
+            $("#navbar").attr("hidden", true);
+
+        } else {
+            $("#navbar").attr("hidden", false);
+        }
+        prevScrollpos = currentScrollPos;
+    }
 </script>

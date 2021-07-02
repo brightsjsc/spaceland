@@ -41,7 +41,7 @@ class HomeController extends Controller
 
         $projects = DB::table('projects')->orderBy('id', 'DESC')->take(5)->get();
 
-        $post = DB::table('posts')->orderBy('created_at', 'DESC')->take(3)->get();
+        $post = DB::table('posts')->orderBy('id', 'DESC')->take(3)->get();
         // return response()->json($projects);
 
         return view('pages.home',compact('post','projects'));

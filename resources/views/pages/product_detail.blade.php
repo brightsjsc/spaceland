@@ -293,7 +293,7 @@
             <div class="project-related">
 
                 <div class="project-header">
-                    <h3 class="title-pro"> D án cùng khu vc</h3>
+                    <h3 class="title-pro"> Dự án cùng khu vực</h3>
                 </div>
                 <div class="project-list">
                     <ul>

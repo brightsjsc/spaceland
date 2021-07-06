@@ -17,7 +17,6 @@
             </nav>
         </div>
     </div>
-    @if ($products != null)
     {{-- @php
         echo '<pre>';
         print_r($products);
@@ -45,6 +44,7 @@
                         @endif
                     </p> --}}
                 </div>
+                @if ($products != null)
 
                 <div class="product-body">
                     @foreach($products as $product)
@@ -88,6 +88,7 @@
                         </div>
                     @endforeach
                 </div>
+
                 <div class="product-paginate">
 	                <nav class="paginate">
 	                    <ul class="pagination">
@@ -233,6 +234,10 @@
 	                    </ul>
 	                </nav>
 	            </div>
+                @else
+                <h1>Không có căn hộ bạn đang tìm</h1>
+
+                @endif
             </div>
         </div>
         <div class="col-md-4">
@@ -326,9 +331,7 @@
     </div>
     {{-- {{ $products->links() }} --}}
 
-    @else
-        <h1>Không có căn hộ bạn đang tìm</h1>
-    @endif
+
 
 </div>
 

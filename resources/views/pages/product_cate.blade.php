@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-@include('layouts.filter-cate')
+@include('layouts.page-header')
 <div class="container" style="padding-top: 20px;">
     <div class="row">
         <div class="col-md-12">

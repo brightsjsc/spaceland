@@ -17,35 +17,39 @@
             </nav>
         </div>
     </div>
-
+    @if ($products != null)
+    {{-- @php
+        echo '<pre>';
+        print_r($products);
+    @endphp --}}
     <div class="row">
         <div class="col-md-8">
             <div class=" product-list">
                 <div class="product-header">
                     <h4 class="product-title text-uppercase">{{ "Kết quả tìm kiếm" }}</h4>
-                    <p>Tìm kiếm theo các tiêu chí: 
-                        @if (!empty($request) && $request['product_cate'] != '')
-                            <i class="text-success">{{ $request['product_cate'] }}</i>. 
+                    {{-- <p>Tìm kiếm theo các tiêu chí:
+                        @if (!empty($request) && $request['adr_city_id'] != '')
+                        Khu vực: <i class="text-success">{{ $product['adr_city_id'] }}</i>.
                         @endif
 
-                        @if (!empty($request) && $request['district'] != '')
-                            Tỉnh/thành phố: <i class="text-success">{{ $request['district'] }}</i>. 
-                        @endif
-
-                        @if (!empty($request) && $request['projects'] != '')
-                            Dự án: <i class="text-success">{{ $request['projects'] }}</i>. 
+                        @if (!empty($request) && $request['project_id'] != '')
+                            Dự án: <i class="text-success">{{ $request['project_id'] }}</i>.
                         @endif
 
                         @if (!empty($request) && $request['acreage'] != '')
-                            Diện tích: <i class="text-success">{{ $request['acreage'] }}</i>.
+                            Diện tích: <i class="text-success">{{ $products[0]['acreage'] }} m</i>.
                         @endif
-                    </p>
+
+                        @if (!empty($request) && $request['price'] != '')
+                            Giá: <i class="text-success">{{ $request['price'] }}</i>.
+                        @endif
+                    </p> --}}
                 </div>
-                
+
                 <div class="product-body">
                     @foreach($products as $product)
                         <div class="product-item row">
-                            
+
 
                             <div class="product-image col-5">
                                 <a href="{{ route('productDetail',['product' => $product->alias]) }}"><img src="{{ asset('uploads/images/products/thumbs/'.$product->image) }}" alt="{{ $product->name }}" title="{{ $product->name }}" width="100%"></a>
@@ -73,7 +77,7 @@
                                         <span class="bedroom">{{ $product->room_number }} PN</span>
                                     @endif
                                     <span class="dot">·</span>
-                                    <span class="location">{{ $product->project->district->level." ".$product->project->district->name_local }}</span>
+                                    <span class="location">{{$product->address}}</span>
                                 </div>
                                 <div class="product-content">
                                     <span>Thông tin chi tiết:</span><br>
@@ -245,72 +249,55 @@
                                     <div class="product-search-control">
                                         <div class="search-cate">
 
-                                            <div class="select-custom">
-                                                <input type="text" id="product-cate" placeholder="Loại bất động sản" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="product_cate" class="ui-autocomplete-input" readonly 
-                                                    @if (!empty($request) && $request['product_cate'] != '')
-                                                        value="{{ $request['product_cate'] }}" 
-                                                    @endif
-                                                >
-                                            
-                                                <div class="search-product-cate">
-                                                    <ul class="ul-result-product-cate">
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                            <select class="form-select" aria-label="Default select example" name="adr_city_id">
+                                                <option value=""> - Khu vực - </option>
+                                                <option value="79">Khu vực HCM</option>
+                                                <option value="74">Khu vực Bình Dương</option>
+                                                <option value="75">Khu vực Đồng Nai</option>
+                                                <option value="0">Khu vực khác</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="search-cate">
+                                            <select class="form-select" name="project_id">
+                                                <option value=""> - Dự án - </option>
+                                                {{-- @foreach ($projects as $project)
+                                                    <option value="{{ $project->id }}">
+                                                        {{ $project->name }}
+                                                    </option>
+                                                @endforeach --}}
+                                            </select>
+                                        </div>
+
+                                        <div class="search-cate">
+                                            <select class="form-select" aria-label="Default select example" name="acreage">
+                                                <option selected value="">- Diện tích - </option>
+
+                                                <option value="1">
+                                                    <= 30 m2</option>
+                                                <option value="30 - 50">30-50 m2</option>
+                                                <option value="50 - 80">50-80 m2</option>
+                                                <option value="80 - 100">80-100 m2</option>
+                                                <option value="100 - 150">100-150 m2</option>
+                                                <option value="150 - 200">150-200 m2</option>
+                                                <option value="200 - 250">200-250 m2</option>
+                                                <option value="250 - 300">250-300 m2</option>
+                                                <option value="300 - 500">300-500 m2</option>
+                                                <option value="2">>= 500 m2</option>
+                                            </select>
                                         </div>
 
                                         <div class="search-cate">
                                             <div class="select-custom">
-                                                <input type="text" id="district" placeholder="Quận/Huyện" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="district" class="ui-autocomplete-input" readonly
-                                                    @if (!empty($request) && $request['district'] != '')
-                                                        value="{{ $request['district'] }}" 
-                                                    @endif
-                                                >
-                                            
-                                                <div class="search-district">
-                                                    <ul class="ul-result-districts">
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                <select class="form-select" aria-label="Default select example" name="price">
+                                                    <option selected value="">- Giá - </option>
 
-                                        <div class="search-cate">
-                                            <div class="select-custom">
-                                                <input type="text" id="projects" placeholder="Dự án" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="projects" class="ui-autocomplete-input" readonly 
-                                                    @if (!empty($request) && $request['projects'] != '')
-                                                        value="{{ $request['projects'] }}" 
-                                                    @endif
-                                                >
-                                            
-                                                <div class="search-projects">
-                                                    <ul class="ul-result-projects">
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="search-cate">
-                                            <div class="select-custom">
-                                                <input type="text" id="acreage" placeholder="Diện tích" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" name="acreage" class="ui-autocomplete-input" readonly 
-                                                    @if (!empty($request) && $request['acreage'] != '')
-                                                        value="{{ $request['acreage'] }}" 
-                                                    @endif
-                                                >
-                                            
-                                                <div class="search-acreage">
-                                                    <ul class="ul-result-acreage">
-                                                        <li><a class="acreage-value"><= 30 m2</a></li>
-                                                        <li><a class="acreage-value">30-50 m2</a></li>
-                                                        <li><a class="acreage-value">50-80 m2</a></li>
-                                                        <li><a class="acreage-value">80-100 m2</a></li>
-                                                        <li><a class="acreage-value">100-150 m2</a></li>
-                                                        <li><a class="acreage-value">150-200 m2</a></li>
-                                                        <li><a class="acreage-value">200-250 m2</a></li>
-                                                        <li><a class="acreage-value">250-300 m2</a></li>
-                                                        <li><a class="acreage-value">300-500 m2</a></li>
-                                                        <li><a class="acreage-value">>= 500 m2</a></li>
-                                                    </ul>
-                                                </div>
+                                                    <option value="0"> dưới 1 tỷ</option>
+                                                    <option value="1000000000 - 2000000000">từ 1 - 2 tỷ</option>
+                                                    <option value="2000000000 - 3000000000">từ 2 - 3 tỷ</option>
+                                                    <option value="3000000000 - 4000000000">từ 3 - 4 tỷ</option>
+                                                    <option value="5">trên 4 tỷ</option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -326,10 +313,10 @@
                 </div>
             </div>
 
-            @include('layouts.cate-area')
+            {{-- @include('layouts.cate-area') --}}
             <div class="project-related">
                 <div class="project-header">
-                   <h3 class="title-pro"> Liên Hệ</h3> 
+                   <h3 class="title-pro"> Liên Hệ</h3>
                 </div>
                 <div class="project-list">
                     @include('pages.contact')
@@ -337,6 +324,12 @@
             </div>
         </div>
     </div>
+    {{-- {{ $products->links() }} --}}
+
+    @else
+        <h1>Không có căn hộ bạn đang tìm</h1>
+    @endif
+
 </div>
 
 @include('layouts.footer-static')
@@ -618,7 +611,80 @@
             $(".search-acreage").css('display','none');
         });
         // --------- End Diện tích -----------------------
-        
+
+    });
+</script>
+<script type="text/javascript">
+    var url_get_project_of_city = "{{ url('/admin/ajax/showProjectOfCity') }}";
+    $("select[name='adr_city_id']").change(function() {
+        var city_id = $(this).val();
+        var token = $("input[name='_token']").val();
+
+        //Producer
+        $.ajax({
+            url: url_get_project_of_city,
+            method: 'POST',
+            data: {
+                city_id: city_id,
+                _token: token
+            },
+            success: function(data) {
+                $("select[name='project_id']").html('');
+                $("select[name='project_id']").append("<option value=''> - Dự án - </option>");
+                $.each(data, function(key, value) {
+                    $("select[name='project_id']").append(
+                        "<option value='" + value.id + "'>" + value.name + "</option>"
+                    );
+                });
+            }
+        });
+    });
+
+    var url_get_project_of_district = "{{ url('/admin/ajax/showProjectOfDistrict') }}";
+    $("select[name='adr_district_id']").change(function() {
+        var district_id = $(this).val();
+        var token = $("input[name='_token']").val();
+
+        if (district_id == '') {
+            var city_id = $("select[name='adr_city_id']").val();
+            $.ajax({
+                url: url_get_project_of_city,
+                method: 'POST',
+                data: {
+                    city_id: city_id,
+                    _token: token
+                },
+                success: function(data) {
+                    $("select[name='project_id']").html('');
+                    $("select[name='project_id']").append("<option value=''> - Dự án - </option>");
+                    $.each(data, function(key, value) {
+                        $("select[name='project_id']").append(
+                            "<option value='" + value.id + "'>" + value.name +
+                            "</option>"
+                        );
+                    });
+                }
+            });
+        } else {
+            $.ajax({
+                url: url_get_project_of_district,
+                method: 'POST',
+                data: {
+                    district_id: district_id,
+                    _token: token
+                },
+                success: function(data) {
+                    $("select[name='project_id']").html('');
+                    $("select[name='project_id']").append("<option value=''> - Dự án - </option>");
+                    $.each(data, function(key, value) {
+                        $("select[name='project_id']").append(
+                            "<option value='" + value.id + "'>" + value.name +
+                            "</option>"
+                        );
+                    });
+                }
+            });
+        }
     });
 </script>
 @endsection

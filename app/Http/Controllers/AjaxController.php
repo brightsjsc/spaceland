@@ -23,7 +23,11 @@ class AjaxController extends Controller
     public function getDistrictOfKeyword(Request $request)
     {
         if ($request->ajax()) {
-            $districts = District::where('name_local', 'like', '%'.$request->district.'%')->where('city_id','01')->get();
+            $districts = District::where('name_local', 'like', '%'.$request->district.'%')
+            ->where('city_id','74')
+            ->orWhere('city_id','75')
+            ->orWhere('city_id','79')
+            ->get();
             return response()->json($districts);
         }
     }
@@ -31,23 +35,23 @@ class AjaxController extends Controller
     public function getProjectOfKeyword(Request $request)
     {
         if ($request->ajax()) {
+
             if ($request->district == '' && $request->projects == '') {
-                $projects = Project::where('adr_city_id','01')->get();
+                $projects = Project::get();
 
             } elseif ($request->district == '' && $request->projects != '') {
-                $projects = Project::where('name', 'like', '%'.$request->projects.'%')->where('adr_city_id','01')->get();
+                $projects = Project::where('name', 'like', '%'.$request->projects.'%')->get();
 
             } elseif ($request->district != '' && $request->projects == '') {
                 $district = District::where('name_local', $request->district)->first();
 
-                $projects = Project::where('adr_district_id',$district->district_id)->where('adr_city_id','01')->get();
+                $projects = Project::where('adr_district_id',$district->district_id)->get();
 
             } else {
                 $district = District::where('name_local', $request->district)->first();
 
                 $projects = Project::where('adr_district_id',$district->district_id)
                                         ->where('name', 'like', '%'.$request->projects.'%')
-                                        ->where('adr_city_id','01')
                                         ->get();
             }
 

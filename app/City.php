@@ -12,6 +12,6 @@ class City extends Model
      * @var array
      */
     protected $fillable = [
-        'name_local', 'name_global', 'alias', 'city_id', 'level',
+        'name_local', 'name_global', 'alias', 'city_id', 'level', 'id'
     ];
 }

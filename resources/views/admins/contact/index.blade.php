@@ -43,7 +43,7 @@
                     <th class="disabled-sorting">#</th>
                     <th class="disabled-sorting">Tên</th>
                     <th class="disabled-sorting">Số điện thoại</th>
-                    <th class="disabled-sorting" style="width: 30%">Quận/huyện</th>
+                    <th class="disabled-sorting" style="width: 30%">Khu vực</th>
                     <th>Ngày tạo</th>
                     <th class="disabled-sorting text-center">Tác vụ</th>
                   </tr>
@@ -54,7 +54,7 @@
                       <td>{{ $item->id}}</td>
                       <td>{{ $item->name }}</td>
                       <td>{{ $item->phone }}</td>
-                      <td>{{ $item->getDistrictName() }}</td>
+                      <td>{{ $item->getCityName() }}</td>
                       <td>{{ $item->created_at }}</td>
                       <td class="text-center">
                         <a href="{{route('deletecontact',['id' => $item->id])}}">Xóa</i></a>
@@ -108,7 +108,7 @@
         e.preventDefault();
 
         var url = $(this).attr('data-url');
-        
+
         Swal.fire({
           title: 'Bạn có muốn xóa?',
           text: 'Bạn sẽ không thể khôi phục người dùng này!',
@@ -126,7 +126,7 @@
         });
 
       });
-      
+
     }
   </script>
 
@@ -140,7 +140,7 @@
           confirmButtonClass: "btn btn-success",
           buttonsStyling: false
         });
-      }); 
+      });
     </script>
   @endif
 @endsection

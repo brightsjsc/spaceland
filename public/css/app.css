@@ -2381,7 +2381,7 @@ h1.card-title {
     display: none !important;
   }
   .menu-mobile-area ul li a {
-    color: #CB2026 !important;
+    color: #CB2026 ;
     font-weight: 600;
     padding: 5px 3px;
     font-size: 16px;
@@ -24453,6 +24453,17 @@ a.text-dark:hover, a.text-dark:focus {
 .invisible {
   visibility: hidden !important;
 }
+.navbar-style{
+  width: 100% !important;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+}
+.text-white{
+  color: white !important;
+}
 
 @media print {
   *,
@@ -24532,5 +24543,14 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-
+}
+.left-poster{
+  width: 13%;
+  left: 0;
+  position: fixed;
+}
+.right-poster{
+  width: 13%;
+  position: fixed;
+  right: 0;
 }

@@ -11,6 +11,7 @@ class ContactController extends Controller
 {
     public function index(){
         $contact = Contact::groupBy('phone')->paginate(20);
+        // return response()->json($contact);
         return view('admins.contact.index',compact('contact'));
     }
     public function delete($id){

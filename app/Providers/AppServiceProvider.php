@@ -9,6 +9,7 @@ use App\Menu;
 use App\District;
 use App\Product;
 use App\ProductCate;
+use App\City;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -37,8 +38,9 @@ class AppServiceProvider extends ServiceProvider
         //Sắp xếp giảm dần giá trị theo cột num_product
         array_multisort(array_column($productOfDistricts, 'num_product'), SORT_DESC, $productOfDistricts);
 
+        $cities = City::all();
 
-        View::share(['menus' => $menus, 'productOfDistricts' => $productOfDistricts]);
+        View::share(['menus' => $menus, 'productOfDistricts' => $productOfDistricts, 'cities'=>$cities]);
     }
 
     /**

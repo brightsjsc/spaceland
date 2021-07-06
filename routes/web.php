@@ -25,7 +25,11 @@ Route::get('/chi-tiet/{product}', 'HomeController@productDetail')->name('product
 Route::get('/du-an/{project}', 'HomeController@productsOfProject')->name('productsOfProject');
 Route::get('/quan/{district}', 'HomeController@productsOfDistrict')->name('productsOfDistrict');
 
-Route::get('tim-kiem', 'HomeController@filter')->name('filter');
+// Route::get('tim-kiem/', 'HomeController@filter')->name('filter');
+
+Route::get('tim-kiem/', 'HomeController@search')->name('filter');
+
+
 Route::get('lien-he', 'HomeController@intro')->name('intro');
 
 Route::get('project/detail/{project_ID}', 'HomeController@projectDetail')->name('century');

@@ -43,4 +43,8 @@ class Project extends Model
     {
         return $this->belongsTo('App\Commune', 'adr_commune_id', 'commune_id');
     }
+
+    public function product(){
+        return $this->hasMany('App\Product');
+    }
 }

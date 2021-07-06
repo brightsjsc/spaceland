@@ -237,18 +237,18 @@ class ProjectController extends Controller
                 'background_img' => $imgName,
                 'image_des' => $imgName_2,
                 'image_scale' => $imgName_3,
-                'image_locate'=> $imgName_4,
-                'image_investor' =>$imgName_5,
-                'image_utilities' =>$imgName_6,
-                'image_more' =>$imgName_7,
-                'image_more_2' =>$imgName_8,
-                'image_more_3' =>$imgName_9,
-                'image_ground' =>$imgName_10,
-                'image_design' =>$imgName_11,
-                'image_house'=>$imgName_12,
-                'image_furniture' =>$imgName_13,
-                'image_payment' =>$imgName_14,
-                'thumbnail_img' =>$imgName_15,
+                'image_locate' => $imgName_4,
+                'image_investor' => $imgName_5,
+                'image_utilities' => $imgName_6,
+                'image_more' => $imgName_7,
+                'image_more_2' => $imgName_8,
+                'image_more_3' => $imgName_9,
+                'image_ground' => $imgName_10,
+                'image_design' => $imgName_11,
+                'image_house' => $imgName_12,
+                'image_furniture' => $imgName_13,
+                'image_payment' => $imgName_14,
+                'thumbnail_img' => $imgName_15,
                 'investor' => $request->investor,
                 'dev_unit' => $request->dev_unit,
                 'acreage' => $request->acreage,
@@ -498,18 +498,18 @@ class ProjectController extends Controller
                 'background_img' => $imgName,
                 'image_des' => $imgName_2,
                 'image_scale' => $imgName_3,
-                'image_locate'=> $imgName_4,
-                'image_investor' =>$imgName_5,
-                'image_utilities' =>$imgName_6,
-                'image_more' =>$imgName_7,
-                'image_more_2' =>$imgName_8,
-                'image_more_3' =>$imgName_9,
-                'image_ground' =>$imgName_10,
-                'image_design' =>$imgName_11,
-                'image_house'=>$imgName_12,
-                'image_furniture' =>$imgName_13,
-                'image_payment' =>$imgName_14,
-                'thumbnail_img' =>$imgName_15,
+                'image_locate' => $imgName_4,
+                'image_investor' => $imgName_5,
+                'image_utilities' => $imgName_6,
+                'image_more' => $imgName_7,
+                'image_more_2' => $imgName_8,
+                'image_more_3' => $imgName_9,
+                'image_ground' => $imgName_10,
+                'image_design' => $imgName_11,
+                'image_house' => $imgName_12,
+                'image_furniture' => $imgName_13,
+                'image_payment' => $imgName_14,
+                'thumbnail_img' => $imgName_15,
                 'investor' => $request->investor,
                 'dev_unit' => $request->dev_unit,
                 'acreage' => $request->acreage,
@@ -566,7 +566,6 @@ class ProjectController extends Controller
     {
         if ($request->ajax()) {
             $districts = District::where('city_id', $request->city_id)->get();
-
             return response()->json($districts);
         }
     }
@@ -583,8 +582,14 @@ class ProjectController extends Controller
     public function showProjectOfCity(Request $request)
     {
         if ($request->ajax()) {
-            $projects = Project::where('adr_city_id', $request->city_id)->get();
-            return response()->json($projects);
+            if ($request->city_id != '') {
+                if ($request->city_id != 0) {
+                    $projects = Project::where('adr_city_id', $request->city_id)->get();
+                } else {
+                    $projects = Project::whereNotIn('adr_city_id', [79, 75, 74])->get();
+                }
+                return response()->json($projects);
+            }
         }
     }
 

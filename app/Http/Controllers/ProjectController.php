@@ -479,10 +479,10 @@ class ProjectController extends Controller
 
             Image::make(public_path() . $imgPath . "/" . $imgName_15)->resize(299, 199)->save(public_path() . $thumbPath . "/" . $imgName_15);
         } else {
-            $imgName_15 = $request->image_payment_pre;
+            $imgName_15 = $request->thumbnail_img_pre;
         }
 
-        // return response()->json($imgName);
+        // return response()->json($imgName_15);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput($request->all());
         } else {

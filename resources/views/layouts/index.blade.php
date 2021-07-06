@@ -60,7 +60,7 @@
     <div class="wrapper wrapper-full-page">
         @yield('content')
     </div>
-
+{{-- 
     <div class="fixed_mobile">
         <div class="action_mobile_footer">
             <a href="https://www.facebook.com/">
@@ -86,7 +86,7 @@
             </a>
         </div>
 
-    </div>
+    </div> --}}
 
     <!-- Core JS Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

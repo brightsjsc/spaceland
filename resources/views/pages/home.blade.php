@@ -10,7 +10,14 @@
 @section('content')
     @include('layouts.page-header')
     <div class="main-content">
+        {{-- <div  class="left-poster">
+            <img src="{{asset('uploads/images/PT2.jpg')}}" alt="" width="100%">
+        </div>
+        <div class="right-poster">
+            <img src="{{asset('uploads/images/PT1.jpg')}}" alt="" width="100%">
+        </div> --}}
         <div class="top-category">
+
             <div class="container content-container">
                 {{-- <h3 class="title-cate"> <a href="http://localhost:8000/quan/nam-tu-liem ">Cho Thuê Căn Hộ Hà Nội</a></h3> --}}
                 <br>

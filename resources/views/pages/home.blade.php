@@ -16,10 +16,13 @@
         <div class="right-poster">
             <img src="{{asset('uploads/images/PT1.jpg')}}" alt="" width="100%">
         </div> --}}
-        <div class="top-category">
+        <div class="top-category position-relative">
+
+             <div class="position-absolute post-left">
+                <img src="{{ asset('uploads/images/image-cate/post.png') }}">
+             </div>
 
             <div class="container">
-
                 <div class="w-100 mt-3">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-5">
@@ -34,33 +37,28 @@
                             <div class="row m-table m-mobi">
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class="w-100 mb-4">
-                                        <a href="{{ URL::to('project/detail/' . $projects[1]->alias) }}">
-                                            <img class="w-100"
-                                            src="{{ asset('/uploads/images/projects/' . $projects[1]->thumbnail_img) }}">
-                                        </a>
+                                        <div class="heigh_img">
+                                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                        </div>
 
                                     </div>
                                     <div class="w-100 ">
-                                        <a href="{{ URL::to('project/detail/' . $projects[2]->alias) }}">
-                                            <img class="w-100"
-                                            src="{{ asset('/uploads/images/projects/' . $projects[2]->thumbnail_img) }}">
-                                        </a>
+                                        <div class="heigh_img">
+                                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6 m-mobi">
                                     <div class="w-100 mb-4">
-                                        <a href="{{ URL::to('project/detail/' . $projects[3]->alias) }}">
-                                            <img class="w-100"
-                                            src="{{ asset('/uploads/images/projects/' . $projects[3]->thumbnail_img) }}">
-                                        </a>
-
+                                        <div class="heigh_img">
+                                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                        </div>
                                     </div>
                                     <div class="w-100">
-                                        <a href="{{ URL::to('project/detail/' . $projects[4]->alias) }}">
-                                            <img class="w-100"
-                                            src="{{ asset('/uploads/images/projects/' . $projects[4]->thumbnail_img) }}">
-                                        </a>
-
+                                        <div class="heigh_img">
+                                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -69,23 +67,40 @@
                     <div class="vision w-100 mt-4">
                         <img class="w-100" src="{{ asset('uploads/images/image-cate/vision.png') }}">
                     </div>
+
+
+
+
                 </div>
-                <h2 class="my-3">Tin tức mới nhất</h2>
-                <div class="row">
-                    @foreach ($post as $value)
-                        <div class="col-xs-12 col-md-6 col-lg-4">
-                            <a href="{{ URL::to('post/detail/' . $value->alias) }}">
-                                <img class="w-100" src="{{ asset('uploads/images/posts/' . $value->image) }}">
-                                <p class="my-1"> {{ $value->title }}</p>
-                            </a>
+
+                <div class="row" >
+                     <h2 class="my-3">Tin tức mới nhất</h2>
+                    <div class="col-xs-12 col-md-6 col-lg-4">
+                        <div class="heigh_img">
+                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
                         </div>
-                    @endforeach
+                        <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-4">
+                        <div class="heigh_img">
+                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                        </div>
+                        <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-4">
+                        <div class="heigh_img">
+                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                        </div>
+                        <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
+                    </div>
                 </div>
             </div>
 
+            <div class="position-absolute post-right">
+                <img src="{{ asset('uploads/images/image-cate/post.png') }}">
+             </div>
 
 
-        </div>
 
         {{-- <div class="bds-category">
         <div class="container" style="padding:30px 1.5rem;">
@@ -275,7 +290,7 @@
                         </div> --}}
     <br>
 
-    @include('layouts.footer-static')
+8    @include('layouts.footer-static')
 @endsection
 <script src="{{ asset('js/home.js') }}"></script>
 @section('script')

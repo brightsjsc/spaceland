@@ -24557,6 +24557,10 @@ a.text-dark:hover, a.text-dark:focus {
 .img_home_sp{
     height: 100%;
 }
+.heigh_img{
+    max-height: 230px;
+}
+
 @media (max-width: 1200px) {
     .img_home_sp{
         height: 95%;
@@ -24575,4 +24579,22 @@ a.text-dark:hover, a.text-dark:focus {
     .m-mobi{
         margin-top: 1.5rem;
     }
+  }
+
+  @media (min-width: 1400px) {
+    .post-left{
+        top: 0;
+        left: 15px;
+    }
+    .post-right{
+        top: 0;
+        right: 15px;
+    }
+  }
+  @media (max-width: 1400px) {
+    .post-left,
+    .post-right{
+        display:none;
+    }
+
   }

@@ -29,7 +29,7 @@
 
           <div clas="col-xs-12 col-md-6">
             <div class="footer-block">
-          <h4 class="footer-title">Chung cư theo khu vực</h4>
+          <h4 class="footer-title">Bất động sản theo khu vực</h4>
           @include('layouts.footer-menu')
         </div>
           </div>

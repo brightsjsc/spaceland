@@ -88,7 +88,7 @@
                 <div class="col-lg">
                     <div style="width:80%; margin-top:50px;background: rgba(0, 0, 0, 0.6); color:white">
                         <div style="background: #E65D26; height:10px"></div>
-    
+
                         <br>
                         <h3 style="margin-left: 10px; margin-right:10%">GIỚI THIỆU VỀ DỰ ÁN @php
                             echo mb_strtoupper($project->name);
@@ -165,7 +165,7 @@
                     <div style="margin-left: 10%">
                         <br>
                         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline">Chủ đầu tư</h1>
-    
+
                         <div>
                             <?php echo $project['description_investor']; ?>
                         </div>
@@ -188,7 +188,7 @@
                     <div style="margin-left: 5%">
                         <br>
                         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline">Tiện ích</h1>
-    
+
                         <div>
                             <?php echo $project['description_utilities']; ?>
                         </div>
@@ -266,19 +266,19 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-    
+
         </div>
         <br>
         <br>
         <br>
         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline text-center" id="ground">Mặt bằng</h1>
-    
+
         <div
             style=" background-image: url('{{ asset('/uploads/images/projects/' . $project->image_ground) }}');background-size: 100% 100%; height:90%">
             <div class="row">
-    
+
                 <div class="col-md"> </div>
-    
+
                 <div class="col-md">
                     <div style="width:60%; margin-top:50px;background: rgba(0, 0, 0, 0.6); color:white" class="mx-auto">
                         <div style="background: #E65D26; height:10px"></div>
@@ -294,7 +294,7 @@
                         <br>
                     </div>
                 </div>
-    
+
             </div>
         </div>
         <div class="row" id="design" style="border: 1px solid">
@@ -306,7 +306,7 @@
                         <br>
                         <div style="padding: 0 10 40 100">
                             <?php echo $project['design']; ?>
-    
+
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -323,7 +323,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="col" style="height:400; padding: 30 100 30 50">
-    
+
                             <img src="{{ asset('/uploads/images/projects/' . $project->image_house) }}" alt="" style=" width:100%;
                                         height:100%;">
                         </div>
@@ -334,7 +334,7 @@
                         <br>
                         <div style="padding: 0 100 40 0">
                             <?php echo $project['model_house']; ?>
-    
+
                         </div>
                     </div>
                 </div>
@@ -349,7 +349,7 @@
                         <br>
                         <div style="padding: 0 10 40 100">
                             <?php echo $project['furniture']; ?>
-    
+
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -366,7 +366,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="col" style="height:400; padding: 30 100 30 50">
-    
+
                             <img src="{{ asset('/uploads/images/projects/' . $project->image_payment) }}" alt="" style=" width:100%;
                                         height:100%;">
                         </div>
@@ -402,7 +402,7 @@
                                     </button>
                                 </h2>
                             </div>
-    
+
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
@@ -441,14 +441,14 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="card">
                             <div class="card-header" id="headingFour">
                                 <h2 class="mb-0">
                                     <button class="btn btn-outline-warning collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                         {{$project->quest_4}}
-    
+
                                     </button>
                                 </h2>
                             </div>

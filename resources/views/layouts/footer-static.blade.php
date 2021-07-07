@@ -23,7 +23,7 @@
         <div clas="row">
             <div clas="col-xs-12 col-md-6">
                <div class="footer-block">
-               
+
               </div>
           </div>
 

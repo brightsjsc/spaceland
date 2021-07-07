@@ -27,7 +27,7 @@
                             <div class="slick-initialized slick-slider">
                                 <div aria-live="polite" class="slick-list draggable">
                                     <div class="slick-track"
-                                        onclick="location.href='{{ URL::to('project/detail/' . $projects[0]->id) }}'">
+                                        onclick="location.href='{{ URL::to('project/detail/' . $projects[0]->alias) }}'">
                                         <img src="{{ asset('/uploads/images/projects/' . $projects[0]->thumbnail_img) }}"
                                             width="570" height="465">
                                     </div>
@@ -82,7 +82,7 @@
                     <div>
                         <div class="row">
                             @foreach ($post as $value)
-                                <div class="col-sm" onclick="location.href='{{ URL::to('post/detail/' . $value->id) }}'">
+                                <div class="col-sm" onclick="location.href='{{ URL::to('post/detail/' . $value->alias) }}'">
                                     <img src="{{ asset('uploads/images/posts/' . $value->image) }}" alt="" width="350"
                                         height="300">
                                     <br>
@@ -285,6 +285,7 @@
                             </h3>
                         </div> --}}
     <br>
+
     @include('layouts.footer-static')
 @endsection
 <script src="{{ asset('js/home.js') }}"></script>

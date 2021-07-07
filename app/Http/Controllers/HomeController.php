@@ -562,15 +562,16 @@ class HomeController extends Controller
         return view('pages.contactpage', compact('getDistrict'));
     }
 
-    public function projectDetail($id)
+    public function projectDetail($project_alias)
     {
-        $project = Project::findOrFail($id);
+        $project = Project::where('alias',$project_alias)->first();
+        // return response()->json($project);
         return view('pages.century', compact('project'));
     }
 
     public function postDetail($id)
     {
-        $post = Post::findOrFail($id);
+        $post = Post::where('alias',$id)->first();
         return view('pages.post_detail', compact('post'));
     }
 

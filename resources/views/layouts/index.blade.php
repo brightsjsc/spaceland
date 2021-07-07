@@ -60,10 +60,10 @@
     <div class="wrapper wrapper-full-page">
         @yield('content')
     </div>
-{{-- 
+
     <div class="fixed_mobile">
         <div class="action_mobile_footer">
-            <a href="https://www.facebook.com/">
+            <a href="https://www.facebook.com/fmiholdings/?ref=pages_you_manage">
                 <div class="image_phone">
                     <img src="{{ asset('uploads/images/facebook-icon-5 1.png') }}" alt="phone">
                 </div>
@@ -71,7 +71,7 @@
         </div>
 
         <div class="action_mobile_footer_2">
-            <a href="https://chat.zalo.me/">
+            <a href="https://zalo.me/0913144599">
                 <div class="image_phone">
                     <img src="{{ asset('uploads/images/zalo 1.png') }}" alt="phone">
                 </div>
@@ -79,14 +79,14 @@
         </div>
 
         <div class="action_mobile_footer_3">
-            <a href="tel:0913144599">
+            <a href="https://msng.link/o/?0913144599=vi">
                 <div class="image_phone">
                     <img src="{{ asset('uploads/images/viber2 1.png') }}" alt="phone">
                 </div>
             </a>
         </div>
 
-    </div> --}}
+    </div>
 
     <!-- Core JS Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -112,7 +112,7 @@
 
     @yield('script')
     <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
         (function() {
@@ -124,7 +124,7 @@
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
-    </script>
+    </script> --}}
     <!--End of Tawk.to Script-->
 
 </html>

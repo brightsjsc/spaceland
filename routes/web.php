@@ -34,8 +34,8 @@ Route::get('tim-kiem/', 'HomeController@search')->name('filter');
 
 Route::get('lien-he', 'HomeController@intro')->name('intro');
 
-Route::get('project/detail/{project_ID}', 'HomeController@projectDetail')->name('century');
-Route::get('post/detail/{post_ID}', 'HomeController@postDetail');
+Route::get('project/detail/{project_alias}', 'HomeController@projectDetail')->name('century');
+Route::get('post/detail/{post_alias}', 'HomeController@postDetail');
 
 
 Route::prefix('ajax')->group(function () {

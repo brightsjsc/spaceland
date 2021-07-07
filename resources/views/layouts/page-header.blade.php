@@ -2,7 +2,6 @@
     <div class="banner-home-slide">
         <div class="home-search">
             <form action="{{ route('filter') }}" method="GET">
-                @csrf
                 <div class="home-search-tool">
                     <div class="home-search-content">
                         <div class="home-search-control row">

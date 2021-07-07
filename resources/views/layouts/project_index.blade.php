@@ -80,13 +80,13 @@
         </div>
 
         <div class="action_mobile_footer_3">
-            <a href="tel:0913144599">
-                <div class="image_phone">
+
+            <a href="viber://chat?number=0913144599">
+            <div class="image_phone">
                     <img src="{{ asset('uploads/images/viber2 1.png') }}" alt="phone">
                 </div>
             </a>
         </div>
-
     </div>
 
     <!-- Core JS Files -->

@@ -79,8 +79,9 @@
         </div>
 
         <div class="action_mobile_footer_3">
-            <a href="https://msng.link/o/?0913144599=vi">
-                <div class="image_phone">
+
+            <a href="viber://chat?number=0913144599">
+            <div class="image_phone">
                     <img src="{{ asset('uploads/images/viber2 1.png') }}" alt="phone">
                 </div>
             </a>

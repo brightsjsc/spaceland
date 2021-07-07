@@ -29,77 +29,80 @@
                     </div>
                     <div class="col all_base">
 
-                            <div class="w-100 mt-3">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-12 col-lg-5">
-                                        <div class="w-100">
-                                            <a href="{{ URL::to('project/detail/' . $projects[0]->alias) }}">
-                                                <img class="w-100 img_home_sp"
-                                                src="{{ asset('/uploads/images/projects/' . $projects[0]->thumbnail_img) }}">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12 col-lg-7">
-                                        <div class="row m-table m-mobi">
-                                            <div class="col-sm-12 col-md-6 col-lg-6">
-                                                <div class="w-100 mb-4">
-
-                                                        <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-
-
-                                                </div>
-                                                <div class="w-100 ">
-
-                                                        <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-
-
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 col-lg-6 m-mobi">
-                                                <div class="w-100 mb-4">
-
-                                                        <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-
-                                                </div>
-                                                <div class="w-100">
-
-                                                        <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="w-100 mt-3">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-5">
+                                    <div class="w-100">
+                                        <a href="{{ URL::to('project/detail/' . $projects[1]->alias) }}">
+                                            <img class="w-100 img_home_sp"
+                                                src="{{ asset('/uploads/images/projects/' . $projects[1]->thumbnail_img) }}">
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="vision w-100 mt-4">
-                                    <img class="w-100" src="{{ asset('uploads/images/image-cate/vision.png') }}">
+                                <div class="col-sm-12 col-md-12 col-lg-7">
+                                    <div class="row m-table m-mobi">
+                                        <div class="col-sm-12 col-md-6 col-lg-6">
+                                            <div class="w-100 mb-4">
+                                                <a href="{{ URL::to('project/detail/' . $projects[0]->alias) }}">
+                                                    <img class="w-100 heigh_img"
+                                                        src="{{ asset('/uploads/images/projects/' . $projects[0]->thumbnail_img) }}">
+                                                </a>
+
+                                            </div>
+                                            <div class="w-100 ">
+
+                                                <a href="{{ URL::to('project/detail/' . $projects[2]->alias) }}">
+                                                    <img class="w-100 heigh_img"
+                                                        src="{{ asset('/uploads/images/projects/' . $projects[2]->thumbnail_img) }}">
+                                                </a>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-6 m-mobi">
+                                            <div class="w-100 mb-4">
+
+                                                <a href="{{ URL::to('project/detail/' . $projects[3]->alias) }}">
+                                                    <img class="w-100 heigh_img"
+                                                        src="{{ asset('/uploads/images/projects/' . $projects[3]->thumbnail_img) }}">
+                                                </a>
+
+                                            </div>
+                                            <div class="w-100">
+
+                                                <a href="{{ URL::to('project/detail/' . $projects[4]->alias) }}">
+                                                    <img class="w-100 heigh_img"
+                                                        src="{{ asset('/uploads/images/projects/' . $projects[4]->thumbnail_img) }}">
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-
-
-
+                            </div>
+                            <div class="vision w-100 mt-4">
+                                <img class="w-100" src="{{ asset('uploads/images/image-cate/vision.png') }}">
                             </div>
 
-                            <div class="row mb-3" >
-                                 <h2 class="my-3">Tin tức mới nhất</h2>
+
+
+
+                        </div>
+
+                        <div class="row mb-3">
+                            <h2 class="my-3">Tin tức mới nhất</h2>
+                            @foreach ($post as $value)
                                 <div class="col-xs-12 col-md-6 col-lg-4">
 
-                                        <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                    <a href="{{ URL::to('post/detail/' . $value->alias) }}">
+                                    <img class="w-100 heigh_img" src="{{ asset('uploads/images/posts/' . $value->image) }}">
 
-                                    <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
+                                    <p class="my-1">{{ $value->title }}</p>
+                                   </a>
                                 </div>
-                                <div class="col-xs-12 col-md-6 col-lg-4">
+                            @endforeach
 
-                                        <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-
-                                    <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
-                                </div>
-                                <div class="col-xs-12 col-md-6 col-lg-4">
-
-                                        <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-
-                                    <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
-                                </div>
-                            </div>
+                        </div>
 
                     </div>
                     <div class="col-2 post-right">
@@ -114,7 +117,7 @@
 
 
 
-        {{-- <div class="bds-category">
+            {{-- <div class="bds-category">
         <div class="container" style="padding:30px 1.5rem;">
         @if (!empty($products))
 
@@ -160,7 +163,7 @@
 
         </div>
     </div> --}}
-        {{-- <div class="bds-category-1">
+            {{-- <div class="bds-category-1">
         @if (!empty($products2))
         <div class="container" style="padding:30px 1.5rem;">
             <div class="row">
@@ -203,7 +206,7 @@
         </div>
                     @endif
     </div> --}}
-        {{-- <div class="bds-category">
+            {{-- <div class="bds-category">
         @if (!empty($products3))
 
         <div class="container" style="padding:30px 1.5rem;">
@@ -247,7 +250,7 @@
         </div>
         @endif
     </div> --}}
-        {{-- <div class="bds-category-1" >
+            {{-- <div class="bds-category-1" >
         @if (!empty($products4))
         <div class="container" style="padding:30px 1.5rem;">
             <div class="row">
@@ -289,7 +292,7 @@
         </div>
         @endif
     </div> --}}
-    </div>
+        </div>
     </div>
     </div>
     {{-- <div class="place-info rent-info" style="display: block;">
@@ -302,7 +305,7 @@
                         </div> --}}
     <br>
 
-@include('layouts.footer-static')
+    @include('layouts.footer-static')
 @endsection
 <script src="{{ asset('js/home.js') }}"></script>
 @section('script')

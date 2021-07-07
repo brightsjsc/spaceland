@@ -18,82 +18,60 @@
         </div> --}}
         <div class="top-category">
 
-            <div class="container content-container">
-                {{-- <h3 class="title-cate"> <a href="http://localhost:8000/quan/nam-tu-liem ">Cho Thuê Căn Hộ Hà Nội</a></h3> --}}
-                <br>
-                <div class="row">
-                    <div class="col-md-5 pdr-0" style="padding:0 !important">
-                        <div class="place-big">
-                            <div class="slick-initialized slick-slider">
-                                <div aria-live="polite" class="slick-list draggable">
-                                    <div class="slick-track"
-                                        onclick="location.href='{{ URL::to('project/detail/' . $projects[0]->id) }}'">
-                                        <img src="{{ asset('/uploads/images/projects/' . $projects[0]->thumbnail_img) }}"
-                                            width="570" height="465">
+            <div class="container">
+
+                <div class="w-100 mt-3">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-5">
+                            <div class="w-100">
+                                <img class="w-100 img_home_sp"
+                                    src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-7">
+                            <div class="row m-table m-mobi">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="w-100 mb-4">
+                                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                    </div>
+                                    <div class="w-100 ">
+                                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 m-mobi">
+                                    <div class="w-100 mb-4">
+                                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                    </div>
+                                    <div class="w-100">
+                                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    <div class="col-md-7 pdl-0">
-                        <div class="place-small">
-                            <img src="{{ asset('/uploads/images/projects/' . $projects[1]->thumbnail_img) }}" width="310"
-                                height="220" style="margin-right: 7px"
-                                onclick="location.href='{{ URL::to('project/detail/' . $projects[1]->id) }}'">
-
-                            <img src="{{ asset('/uploads/images/projects/' . $projects[2]->thumbnail_img) }}" width="310"
-                                height="220"
-                                onclick="location.href='{{ URL::to('project/detail/' . $projects[2]->id) }}'">
-
-                            <img src="{{ asset('/uploads/images/projects/' . $projects[3]->thumbnail_img) }}" width="310"
-                                height="220" style="margin-top: 25px;margin-right: 7px"
-                                onclick="location.href='{{ URL::to('project/detail/' . $projects[3]->id) }}'">
-                            <img src="{{ asset('/uploads/images/projects/' . $projects[4]->thumbnail_img) }}" width="310"
-                                height="220" style="margin-top: 25px "
-                                onclick="location.href='{{ URL::to('project/detail/' . $projects[4]->id) }}'">
-
-                        </div>
-
-                        <div class="clear"></div>
+                    <div class="vision w-100 mt-4">
+                        <img class="w-100" src="{{ asset('uploads/images/image-cate/vision.png') }}">
                     </div>
                 </div>
-                <div class="information">
-                    <div class="row">
-                        <div class="col-sm" style="text-align: center">
-                            <img src="{{ asset('assets/img/Frame 9.png') }}" width="30%" style="margin-top: 20px">
-                            <img src="{{ asset('assets/img/Group 22.png') }}" width="72%" style="margin-top: 20px">
-                        </div>
-                        <div class="col-sm ">
-                            <img src="{{ asset('assets/img/Frame 10.png') }}" width="23%" style="margin-top: 25px">
-                            <br>
-                            <img src="{{ asset('assets/img/Group 23.png') }}" width="70%" style="margin-top: 20px">
-                        </div>
-                        <div class="col-sm ">
-                            <img src="{{ asset('assets/img/Frame 11.png') }}" width="23%" style="margin-top: 25px">
-                            <br>
-                            <img src="{{ asset('assets/img/Group 24.png') }}" width="65%" style="margin-top: 20px">
-                        </div>
+                <h2 class="my-3">Tin tức mới nhất</h2>
+                <div class="row" >
+                    <div class="col-xs-12 col-md-6 col-lg-4">
+                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                        <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
                     </div>
-                </div>
-                <div class="news">
-                    <h4 style="margin-top: 30; margin-left: -5px; color:#E65D26; font-weight: bold; font-style: italic;
-                                            " id="news">TIN TỨC MỚI NHẤT</h4>
-                    <div>
-                        <div class="row">
-                            @foreach ($post as $value)
-                                <div class="col-sm" onclick="location.href='{{ URL::to('post/detail/' . $value->id) }}'">
-                                    <img src="{{ asset('uploads/images/posts/' . $value->image) }}" alt="" width="350"
-                                        height="300">
-                                    <br>
-                                    {{ $value->title }}
-                                </div>
-                            @endforeach
-                        </div>
-
+                    <div class="col-xs-12 col-md-6 col-lg-4">
+                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                        <p class="my-1" >Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-4">
+                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                        <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
                     </div>
                 </div>
             </div>
+
 
 
         </div>

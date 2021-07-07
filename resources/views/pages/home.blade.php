@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-2 post-left">
                         <div class="mt-3">
-                            <img class="w-100" src="{{ asset('uploads/images/image-cate/PT1.jpg') }}">
+                            <img class="w-100" src="{{ asset('uploads/images/image-cate/PT2.jpg') }}">
                         </div>
                     </div>
                     <div class="col all_base">
@@ -95,19 +95,19 @@
                                 <div class="col-xs-12 col-md-6 col-lg-4">
 
                                     <a href="{{ URL::to('post/detail/' . $value->alias) }}">
-                                    <img class="w-100 heigh_img" src="{{ asset('uploads/images/posts/' . $value->image) }}">
+                                        <img class="w-100 heigh_img"
+                                            src="{{ asset('uploads/images/posts/' . $value->image) }}">
 
-                                    <p class="my-1">{{ $value->title }}</p>
-                                   </a>
+                                        <p class="my-1">{{ $value->title }}</p>
+                                    </a>
                                 </div>
                             @endforeach
-
                         </div>
 
                     </div>
                     <div class="col-2 post-right">
                         <div class="mt-3">
-                            <img class="w-100" src="{{ asset('uploads/images/image-cate/post.png') }}">
+                            <img class="w-100" src="{{ asset('uploads/images/image-cate/PT1.jpg') }}">
                         </div>
                     </div>
                 </div>

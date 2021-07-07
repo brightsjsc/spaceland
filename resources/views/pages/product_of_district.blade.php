@@ -1,19 +1,21 @@
 @extends('layouts.index')
 @section('head_title')
-  {{ $district->name_local }}
+  {{ $city->name_local }}
 @endsection
 @section('image-page')
     {{ asset('uploads/images/bg2.jpg')}}
 @endsection
 @section('content')
-@include('layouts.filter-district')
+{{-- @include('layouts.filter-district') --}}
+@include('layouts.page-header')
+
 <div class="container" style="padding-top: 20px;">
     <div class="row">
         <div class="col-md-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}"> Trang chủ</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $district->name_local }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $city->name_local }}</li>
                 </ol>
             </nav>
         </div>
@@ -23,7 +25,7 @@
             <div class=" product-list">
                 <div class="product-header">
                     <div class="header-title">
-                        <h1 class="product-title text-uppercase">{{ "Khu vực ".$district->level." ".$district->name_local }}</h1>
+                        <h1 class="product-title text-uppercase">{{ "Khu vực ".$city->name_local }}</h1>
                     </div>
                     <div class="header-sort">
                         <div class="product-sort">
@@ -65,9 +67,9 @@
                 <div class="product-body">
                     @foreach($products as $product)
                         <div class="product-item row">
-                            
+
                             <div class="product-image col-5">
-                                <a href="{{ route('productDetail',['product' => $product->alias]) }}"><img src="{{ asset('uploads/images/products/thumbs/'.$product->image) }}" alt="{{ $district->name_local }}" title="{{ $district->name_local }}" width="100%"></a>
+                                <a href="{{ route('productDetail',['product' => $product->alias]) }}"><img src="{{ asset('uploads/images/products/thumbs/'.$product->image) }}" alt="{{ $city->name_local }}" title="{{ $city->name_local }}" width="100%"></a>
                             </div>
                             <div class="product-main col-7">
                                 <div class="product-title">
@@ -96,7 +98,7 @@
                                         <span class="bedroom">{{ $product->room_number }} PN</span>
                                     @endif
                                     <span class="dot">·</span>
-                                    <span class="location">{{ $product->project->district->level." ".$product->project->district->name_local }}</span>
+                                    {{-- <span class="location">{{ $product->project->$product->project->city->name_local }}</span> --}}
                                 </div>
                                 <div class="product-content">
                                     <span>Thông tin chi tiết:</span><br>
@@ -167,7 +169,7 @@
         <div class="col-md-4">
             <div class="project-related">
                 <div class="project-header" >
-                    <h3 class="title-pro">{{ "Dự án khác tại ".$district->level." ".$district->name_local }}</h3>
+                    <h3 class="title-pro">{{ "Dự án khác tại " .$city->name_local }}</h3>
                 </div>
                 <div class="project-list">
                     <ul>
@@ -177,10 +179,10 @@
                     </ul>
                 </div>
             </div>
-            @include('layouts.cate-area')
+            {{-- @include('layouts.cate-area') --}}
             <div class="project-related">
                 <div class="project-header">
-                   <h3 class="title-pro"> Liên Hệ</h3> 
+                   <h3 class="title-pro"> Liên Hệ</h3>
                 </div>
                 <div class="project-list">
                     @include('pages.contact')

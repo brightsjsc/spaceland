@@ -307,6 +307,7 @@ class HomeController extends Controller
 
         $projects   = $district->projects;
         $project_id = array_column($projects->toArray(), 'id');
+        // return response()->json($project_id);
 
         $query = Product::where('status', 0)->where('publish', 0);
 
@@ -354,6 +355,76 @@ class HomeController extends Controller
         $products = $query->paginate(20);
 
         return view('pages.product_of_district', ['district' => $district, 'projects' => $projects, 'products' => $products, 'request' => $request->all(), 'getDistrict' => $getDistrict]);
+    }
+
+    public function productsOfCity($city_alias, Request $request)
+    {
+        $getDistrict = District::where('city_id', '01')->get();
+
+        if($city_alias=="khac"){
+           $City = City::whereNotIn('alias', ['ho-chi-minh','binh-duong','dong-nai'])->get();
+        }else{
+            $City = City::where('alias', $city_alias)->first();
+        }
+
+        if ($City == null) {
+            return response()->json([
+                "code" => 403,
+                "message" => 'Permission denied!'
+            ], 403);
+        }
+        $projects = DB::table('projects')->where('adr_city_id',$City->city_id)->get();
+
+        $project_id = array_column($projects->toArray(), 'id');
+
+        $query = Product::where('status', 0)->where('publish', 0);
+
+        // Khi bộ lọc hoạt động
+        if ($request->project != '') {
+            $project = Project::where('alias', $request->project)->first();
+            $query->where('project_id', $project->id);
+        } else {
+            $query->whereIn('project_id', $project_id);
+        }
+
+        if ($request->room_number != '') {
+            $query->where('room_number', $request->room_number);
+        }
+
+        if ($request->price != '') {
+            $price = explode('-', $request->price);
+            if ($request->price == 'thoa-thuan') {
+                $query->where('price', 0);
+            } elseif ($request->price == '>20000000') {
+                $query->where('price', '>', 20000000);
+            } else {
+                $query->whereBetween('price', $price);
+            }
+        }
+
+        if (!empty($request->orderBy)) {
+            // Khi sắp xếp hoạt động
+            switch ($request->orderBy) {
+                case 'tin-cu-nhat':
+                    $query->orderby('created_at', 'asc');
+                    break;
+                case 'gia-tu-thap-den-cao':
+                    $query->orderby('price', 'asc');
+                    break;
+                case 'gia-tu-cao-den-thap':
+                    $query->orderby('price', 'desc');
+                    break;
+                case 'tin-moi-nhat':
+                default:
+                    $query->orderby('created_at', 'desc');
+            }
+        }
+
+        $products = $query->paginate(20);
+        // return response()->json($products);
+
+
+        return view('pages.product_of_district', ['city' => $City, 'projects' => $projects, 'products' => $products, 'request' => $request->all(), 'getDistrict' => $getDistrict]);
     }
 
     /**
@@ -678,12 +749,9 @@ class HomeController extends Controller
                     }
                 }
             }
-            //Trường hợp Diện tích == Null && Giá != Null
+            //Trường hợp Diện tích == Null
             else {
-                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                    $query->where($adr_column, '=', $request->adr_city_id);
-                    $query->where($project_column, '=', $request->project_id);
-                }])->paginate(5);
+                // Giá != Null
                 if ($price != '') {
                     $price_short = $price;
                     // Giá < 1 tỉ
@@ -719,6 +787,13 @@ class HomeController extends Controller
                             ->whereBetween('price', $int_price_arr)->orderby('created_at', 'desc')->paginate(5);
                     }
                 }
+            }
+            //Trường hợp Diện tích == Null && Giá == Null
+            if ($acreage == '' && $price == '') {
+                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                    $query->where($adr_column, '=', $request->adr_city_id);
+                    $query->where($project_column, '=', $request->project_id);
+                }])->paginate(5);
             }
         }
 

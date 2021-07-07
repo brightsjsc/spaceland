@@ -24,6 +24,8 @@ Route::get('/bat-dong-san/{product_cate}', 'HomeController@productCate')->name('
 Route::get('/chi-tiet/{product}', 'HomeController@productDetail')->name('productDetail');
 Route::get('/du-an/{project}', 'HomeController@productsOfProject')->name('productsOfProject');
 Route::get('/quan/{district}', 'HomeController@productsOfDistrict')->name('productsOfDistrict');
+Route::get('/khu-vuc/{city}', 'HomeController@productsOfCity')->name('productsOfCity');
+
 
 // Route::get('tim-kiem/', 'HomeController@filter')->name('filter');
 

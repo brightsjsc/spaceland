@@ -24555,17 +24555,13 @@ a.text-dark:hover, a.text-dark:focus {
   right: 0;
 } */
 .img_home_sp{
-    height: 100%;
+   max-height: 480px;
 }
 .heigh_img{
     max-height: 230px;
 }
 
-@media (max-width: 1200px) {
-    .img_home_sp{
-        height: 95%;
-    }
-  }
+/*  */
 @media (max-width: 1020px) {
     .m-table{
         margin-top: .5rem;
@@ -24574,7 +24570,7 @@ a.text-dark:hover, a.text-dark:focus {
 
   @media (max-width: 765px) {
     .img_home_sp{
-        height: auto ;
+        max-height: 230px ;
     }
     .m-mobi{
         margin-top: 1.5rem;
@@ -24591,7 +24587,7 @@ a.text-dark:hover, a.text-dark:focus {
         right: 15px;
     }
   }
-  @media (max-width: 1400px) {
+  @media (max-width: 1500px) {
     .post-left,
     .post-right{
         display:none;

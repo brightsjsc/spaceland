@@ -73,7 +73,7 @@
 
                 </div>
 
-                <div class="row" >
+                <div class="row mb-3" >
                      <h2 class="my-3">Tin tức mới nhất</h2>
                     <div class="col-xs-12 col-md-6 col-lg-4">
 
@@ -290,7 +290,7 @@
                         </div> --}}
     <br>
 
-8    @include('layouts.footer-static')
+@include('layouts.footer-static')
 @endsection
 <script src="{{ asset('js/home.js') }}"></script>
 @section('script')

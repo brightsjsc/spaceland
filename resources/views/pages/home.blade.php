@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('head_title')
-    {{ 'Kênh thông tin bất động sản cho thuê' }}
+    {{ 'Spaceland' }}
 @endsection
 @section('image-page')
     {{ asset('uploads/images/bg2.jpg') }}
@@ -78,13 +78,12 @@
                 </div>
                 <div class="news">
                     <h4 style="margin-top: 30; margin-left: -5px; color:#E65D26; font-weight: bold; font-style: italic;
-                                    " id="news">TIN TỨC MỚI NHẤT</h4>
+                                            " id="news">TIN TỨC MỚI NHẤT</h4>
                     <div>
                         <div class="row">
                             @foreach ($post as $value)
-                                <div class="col-sm"
-                                    onclick="location.href='{{ URL::to('post/detail/' . $value->id) }}'"><img
-                                        src="{{ asset('uploads/images/posts/' . $value->image) }}" alt="" width="350"
+                                <div class="col-sm" onclick="location.href='{{ URL::to('post/detail/' . $value->id) }}'">
+                                    <img src="{{ asset('uploads/images/posts/' . $value->image) }}" alt="" width="350"
                                         height="300">
                                     <br>
                                     {{ $value->title }}

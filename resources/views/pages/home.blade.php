@@ -24,28 +24,43 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-5">
                             <div class="w-100">
-                                <img class="w-100 img_home_sp"
-                                    src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-
+                                <a href="{{ URL::to('project/detail/' . $projects[0]->alias) }}">
+                                    <img class="w-100 img_home_sp"
+                                    src="{{ asset('/uploads/images/projects/' . $projects[0]->thumbnail_img) }}">
+                                </a>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-7">
                             <div class="row m-table m-mobi">
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class="w-100 mb-4">
-                                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                        <a href="{{ URL::to('project/detail/' . $projects[1]->alias) }}">
+                                            <img class="w-100"
+                                            src="{{ asset('/uploads/images/projects/' . $projects[1]->thumbnail_img) }}">
+                                        </a>
+
                                     </div>
                                     <div class="w-100 ">
-                                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-
+                                        <a href="{{ URL::to('project/detail/' . $projects[2]->alias) }}">
+                                            <img class="w-100"
+                                            src="{{ asset('/uploads/images/projects/' . $projects[2]->thumbnail_img) }}">
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6 m-mobi">
                                     <div class="w-100 mb-4">
-                                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                        <a href="{{ URL::to('project/detail/' . $projects[3]->alias) }}">
+                                            <img class="w-100"
+                                            src="{{ asset('/uploads/images/projects/' . $projects[3]->thumbnail_img) }}">
+                                        </a>
+
                                     </div>
                                     <div class="w-100">
-                                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+                                        <a href="{{ URL::to('project/detail/' . $projects[4]->alias) }}">
+                                            <img class="w-100"
+                                            src="{{ asset('/uploads/images/projects/' . $projects[4]->thumbnail_img) }}">
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>
@@ -56,19 +71,15 @@
                     </div>
                 </div>
                 <h2 class="my-3">Tin tức mới nhất</h2>
-                <div class="row" >
-                    <div class="col-xs-12 col-md-6 col-lg-4">
-                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                        <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
-                    </div>
-                    <div class="col-xs-12 col-md-6 col-lg-4">
-                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                        <p class="my-1" >Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
-                    </div>
-                    <div class="col-xs-12 col-md-6 col-lg-4">
-                        <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                        <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
-                    </div>
+                <div class="row">
+                    @foreach ($post as $value)
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <a href="{{ URL::to('post/detail/' . $value->alias) }}">
+                                <img class="w-100" src="{{ asset('uploads/images/posts/' . $value->image) }}">
+                                <p class="my-1"> {{ $value->title }}</p>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
 

@@ -22,8 +22,8 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-2 ">
-                        <div class="mt-3 position-relative post-left">
+                    <div class="col-2 post-left">
+                        <div class="mt-3 position-relative ">
                             <img class="w-100" src="{{ asset('uploads/images/image-cate/post.png') }}">
                         </div>
                     </div>

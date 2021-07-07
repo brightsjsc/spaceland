@@ -24560,14 +24560,7 @@ a.text-dark:hover, a.text-dark:focus {
 .heigh_img{
     max-height: 230px;
 }
-.post-left{
-    left : 0;
-    top: 0;
-}
-.post-right{
-    right : 0;
-    top: 0;
-}
+
 /*  */
 @media (max-width: 1020px) {
     .m-table{
@@ -24582,5 +24575,22 @@ a.text-dark:hover, a.text-dark:focus {
     .m-mobi{
         margin-top: 1.5rem;
     }
+    .post-left,
+    .post-right{
+
+        display: none;
+    }
+   .all_base{
+       width: 1200px;
+       max-width: 1140px;
+       margin: auto;
+   }
   }
 
+   @media (min-width: 765px) {
+    .post-left,
+    .post-right{
+
+        display: block;
+    }
+  }

@@ -167,18 +167,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="project-related">
-                <div class="project-header" >
-                    <h3 class="title-pro">{{ "Dự án khác tại " .$city->name_local }}</h3>
-                </div>
-                <div class="project-list">
-                    <ul>
-                        @foreach ($projects as $project_related)
-                            <li><i class="fas fa-angle-right"></i><a href="{{ route('productsOfProject',['project' => $project_related->alias]) }}">{{ $project_related->name }}</a></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
+
             {{-- @include('layouts.cate-area') --}}
             <div class="project-related">
                 <div class="project-header">

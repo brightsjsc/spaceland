@@ -240,7 +240,7 @@ class HomeController extends Controller
         $district = District::where('city_id', '01')->get();
 
         $project = Project::where('alias', $project)->first();
-
+        // return response()->json($project);
         $product_id = [];
         // dd($get_project->id);
         $get_products = Product::select()->get();

@@ -15,7 +15,7 @@
 <div class="container" style="padding-top: 20px;">
     <div class="row">
         <div class="col-md-12">
-            
+
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}"> Trang chủ</a></li>
@@ -41,38 +41,38 @@
                                             <select name="orderBy" id="sort">
                                                 <option value="tin-moi-nhat"
                                                     @if (!empty($request['orderBy']) && $request['orderBy'] == 'tin-moi-nhat')
-                                                        selected 
+                                                        selected
                                                     @endif
-                                                >Tin mới nhất</option>    
+                                                >Tin mới nhất</option>
                                                 <option value="tin-cu-nhat"
                                                     @if (!empty($request['orderBy']) && $request['orderBy'] == 'tin-cu-nhat')
-                                                        selected 
+                                                        selected
                                                     @endif
-                                                >Tin cũ nhất</option>    
+                                                >Tin cũ nhất</option>
                                                 <option value="gia-tu-thap-den-cao"
                                                     @if (!empty($request['orderBy']) && $request['orderBy'] == 'gia-tu-thap-den-cao')
-                                                        selected 
+                                                        selected
                                                     @endif
-                                                >Giá từ thấp đến cao</option>    
+                                                >Giá từ thấp đến cao</option>
                                                 <option value="gia-tu-cao-den-thap"
                                                     @if (!empty($request['orderBy']) && $request['orderBy'] == 'gia-tu-cao-den-thap')
-                                                        selected 
+                                                        selected
                                                     @endif
-                                                >Giá từ cao đến thấp</option>    
+                                                >Giá từ cao đến thấp</option>
                                             </select>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                    </div> 
-                    
+                    </div>
+
                 </div>
                 <div class="product-body">
                     @foreach($products as $product)
                         <div class="product-item row">
-                           
-                            
+
+
                             <div class="product-image col-5">
                                 <a href="{{ route('productDetail',['product' => $product->alias]) }}"><img src="{{ asset('uploads/images/products/thumbs/'.$product->image) }}" alt="{{ $project->name }}" title="{{ $project->name }}" width="100%"></a>
                             </div>
@@ -165,10 +165,22 @@
             </div>
         </div>
         <div class="col-md-4">
-            @include('layouts.cate-area')
+            {{-- @include('layouts.cate-area') --}}
+            <div class="project-related">
+                <div class="project-header" >
+                    <h3 class="title-pro">{{ "Dự án khác tại " .$city->name_local }}</h3>
+                </div>
+                <div class="project-list">
+                    <ul>
+                        @foreach ($projects as $project_related)
+                            <li><i class="fas fa-angle-right"></i><a href="{{ route('productsOfProject',['project' => $project_related->alias]) }}">{{ $project_related->name }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
             <div class="project-related">
                 <div class="project-header">
-                   <h3 class="title-pro"> Liên Hệ</h3> 
+                   <h3 class="title-pro"> Liên Hệ</h3>
                 </div>
                 <div class="project-list">
                     @include('pages.contact')

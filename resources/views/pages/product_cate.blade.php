@@ -168,7 +168,7 @@
         </div>
         <div class="col-md-4">
             {{-- @include('layouts.cate-area') --}}
-            @include('layouts.bds')
+            {{-- @include('layouts.bds') --}}
             <div class="project-related">
                 <div class="project-header">
                    <h3 class="title-pro"> Liên Hệ</h3>

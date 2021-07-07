@@ -37,28 +37,28 @@
                             <div class="row m-table m-mobi">
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class="w-100 mb-4">
-                                        <div class="heigh_img">
-                                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                                        </div>
+
+                                            <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+
 
                                     </div>
                                     <div class="w-100 ">
-                                        <div class="heigh_img">
-                                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                                        </div>
+
+                                            <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+
 
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6 m-mobi">
                                     <div class="w-100 mb-4">
-                                        <div class="heigh_img">
-                                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                                        </div>
+
+                                            <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+
                                     </div>
                                     <div class="w-100">
-                                        <div class="heigh_img">
-                                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                                        </div>
+
+                                            <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+
                                     </div>
                                 </div>
                             </div>
@@ -76,21 +76,21 @@
                 <div class="row" >
                      <h2 class="my-3">Tin tức mới nhất</h2>
                     <div class="col-xs-12 col-md-6 col-lg-4">
-                        <div class="heigh_img">
-                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                        </div>
+
+                            <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+
                         <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
                     </div>
                     <div class="col-xs-12 col-md-6 col-lg-4">
-                        <div class="heigh_img">
-                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                        </div>
+
+                            <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+
                         <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
                     </div>
                     <div class="col-xs-12 col-md-6 col-lg-4">
-                        <div class="heigh_img">
-                            <img class="w-100" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
-                        </div>
+
+                            <img class="w-100 heigh_img" src="{{ asset('uploads/images/image-cate/img1.jpg') }}">
+
                         <p class="my-1">Dự án chung cư xanh bắt đầu khởi công ngày 21/6</p>
                     </div>
                 </div>

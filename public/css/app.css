@@ -24555,7 +24555,7 @@ a.text-dark:hover, a.text-dark:focus {
   right: 0;
 } */
 .img_home_sp{
-   max-height: 100%;
+   height: 95%;
 }
 .heigh_img{
     max-height: 230px;
@@ -24566,9 +24566,7 @@ a.text-dark:hover, a.text-dark:focus {
     .m-table{
         margin-top: .5rem;
     }
-    .img_home_sp{
-        max-height: 95%;
-     }
+
   }
 
   @media (max-width: 765px) {

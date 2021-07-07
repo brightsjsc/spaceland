@@ -44,7 +44,7 @@
                                         <div class="col-sm-12 col-md-6 col-lg-6">
                                             <div class="w-100 mb-4">
                                                 <a href="{{ URL::to('project/detail/' . $projects[0]->alias) }}">
-                                                    <img class="w-100 heigh_img"
+                                                    <img class="w-100 "
                                                         src="{{ asset('/uploads/images/projects/' . $projects[0]->thumbnail_img) }}">
                                                 </a>
 
@@ -52,7 +52,7 @@
                                             <div class="w-100 ">
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[2]->alias) }}">
-                                                    <img class="w-100 heigh_img"
+                                                    <img class="w-100 "
                                                         src="{{ asset('/uploads/images/projects/' . $projects[2]->thumbnail_img) }}">
                                                 </a>
 
@@ -63,7 +63,7 @@
                                             <div class="w-100 mb-4">
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[3]->alias) }}">
-                                                    <img class="w-100 heigh_img"
+                                                    <img class="w-100 "
                                                         src="{{ asset('/uploads/images/projects/' . $projects[3]->thumbnail_img) }}">
                                                 </a>
 
@@ -71,7 +71,7 @@
                                             <div class="w-100">
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[4]->alias) }}">
-                                                    <img class="w-100 heigh_img"
+                                                    <img class="w-100 "
                                                         src="{{ asset('/uploads/images/projects/' . $projects[4]->thumbnail_img) }}">
                                                 </a>
 

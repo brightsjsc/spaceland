@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-2 position-relative post-left">
                         <div class="mt-3 position-absolute post_show">
-                            <img class="w-100" src="{{ asset('uploads/images/image-cate/PT2.jpg') }}">
+                            <img class="w-100" src="{{ asset('uploads/images/image-cate/PT1.jpg') }}">
                         </div>
                     </div>
                     <div class="col all_base">
@@ -315,12 +315,12 @@
         // alert(window.pageYOffset);
         var srollHtml = document.querySelector('html').clientHeight;
         var srolFooter = document.querySelector('.footer-static').clientHeight;
-        var rang =  document.querySelector('.page-header').clientHeight + document.querySelector('.post_show').clientHeight ;
-        console.log(rang);
+        var rang = document.querySelector('.custom-navbar').clientHeight + document.querySelector('.page-header').clientHeight + document.querySelector('.post_show').clientHeight ;
+        // console.log(rang);
         var srollBody = (srollHtml - srolFooter) ;
-        console.log(srollBody);
+        // console.log(rang);
         var srollEnd = srollBody - rang;
-        console.log(srollEnd);
+        // console.log(srollEnd);
 
         var currentScrollPos = window.pageYOffset ;
         if(currentScrollPos == 0 || currentScrollPos == 100){

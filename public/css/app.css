@@ -24573,6 +24573,7 @@ a.text-dark:hover, a.text-dark:focus {
     right: 0;
     transition: .1s linear ease ;
 }
+
 /*  */
 @media (max-width: 1020px) {
     .m-table{

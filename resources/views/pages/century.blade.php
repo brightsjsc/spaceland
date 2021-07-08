@@ -415,7 +415,7 @@
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <?php echo $project['answer_1']; ?>
+                                    <?php echo $project['answer_2']; ?>
                                 </div>
                             </div>
                         </div>

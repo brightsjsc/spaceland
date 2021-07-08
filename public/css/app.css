@@ -24555,8 +24555,9 @@ a.text-dark:hover, a.text-dark:focus {
   position: fixed;
   right: 0;
 } */
+
 .img_home_sp{
-   height: 95%;
+   height: 100%;
 }
 .heigh_img{
     max-height: 230px;
@@ -24582,7 +24583,7 @@ a.text-dark:hover, a.text-dark:focus {
 
   @media (max-width: 765px) {
     .img_home_sp{
-        max-height: 230px ;
+        height: auto;
     }
     .m-mobi{
         margin-top: 1.5rem;
@@ -24602,7 +24603,7 @@ a.text-dark:hover, a.text-dark:focus {
    @media (min-width: 765px) {
     .post-left,
     .post-right{
-
+        overflow: hidden;
         display: block;
     }
   }

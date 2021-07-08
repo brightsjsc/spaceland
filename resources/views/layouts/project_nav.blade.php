@@ -17,7 +17,7 @@
             <span class="fa fa-times menu-mobile-close"></span>
             <ul class="menu-mobile list-style-none">
                 <li class="menu-child">
-                    <a href="#Century" class="text-white">Century
+                    <a href="#Century" class="text-white">Giới thiệu
                     </a>
                 </li>
                 <li class="menu-child">

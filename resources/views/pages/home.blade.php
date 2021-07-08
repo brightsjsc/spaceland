@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-2 position-relative post-left">
                         <div class="mt-3 position-absolute post_show">
-                            <img class="w-100" src="{{ asset('uploads/images/image-cate/PT1.jpg') }}">
+                            <img class="w-100" src="{{ asset('uploads/images/image-cate/PT2.jpg') }}">
                         </div>
                     </div>
                     <div class="col all_base">

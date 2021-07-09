@@ -361,9 +361,9 @@ class HomeController extends Controller
     {
         $getDistrict = District::where('city_id', '01')->get();
 
-        if($city_alias=="khac"){
-           $City = City::whereNotIn('alias', ['ho-chi-minh','binh-duong','dong-nai'])->get();
-        }else{
+        if ($city_alias == "khac") {
+            $City = City::whereNotIn('alias', ['ho-chi-minh', 'binh-duong', 'dong-nai'])->get();
+        } else {
             $City = City::where('alias', $city_alias)->first();
         }
 
@@ -373,7 +373,7 @@ class HomeController extends Controller
                 "message" => 'Permission denied!'
             ], 403);
         }
-        $projects = DB::table('projects')->where('adr_city_id',$City->city_id)->get();
+        $projects = DB::table('projects')->where('adr_city_id', $City->city_id)->get();
 
         $project_id = array_column($projects->toArray(), 'id');
 
@@ -564,14 +564,14 @@ class HomeController extends Controller
 
     public function projectDetail($project_alias)
     {
-        $project = Project::where('alias',$project_alias)->first();
+        $project = Project::where('alias', $project_alias)->first();
         // return response()->json($project);
         return view('pages.century', compact('project'));
     }
 
     public function postDetail($id)
     {
-        $post = Post::where('alias',$id)->first();
+        $post = Post::where('alias', $id)->first();
         return view('pages.post_detail', compact('post'));
     }
 
@@ -583,12 +583,11 @@ class HomeController extends Controller
         $acreage = $request->acreage;
         $price = $request->price;
 
-        if ($value['adr_city_id'] == '' && $value['project_id'] == '' && $value['acreage'] == '' && $value['price'] == '') {
-            $products = [];
-        } else {
-            $adr_city_id == '' ?  $adr_column = null : $adr_column = "adr_city_id";
+        $adr_city_id == '' ?  $adr_column = null : $adr_column = "adr_city_id";
 
-            $project_id == "" ? $project_column = null : $project_column = "id";
+        $project_id == "" ? $project_column = null : $project_column = "id";
+
+        if ($request->adr_city_id == '0') {
             //Trường hợp Diện tích != Null
             if ($acreage != '') {
                 //Trường hợp Diện tích != Null && Giá !=Null
@@ -599,7 +598,7 @@ class HomeController extends Controller
                         //Diên tích <= 30m & Giá < 1 tỉ
                         if ($price_short == '0') {
                             $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->whereNotIn($adr_column, [74, 75, 79]);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
@@ -608,7 +607,7 @@ class HomeController extends Controller
                         //Diên tích <= 30m & Giá >= 5 tỉ
                         if ($price_short == '5') {
                             $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->whereNotIn($adr_column, [74, 75, 79]);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
@@ -625,7 +624,7 @@ class HomeController extends Controller
                             );
 
                             $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->whereNotIn($adr_column, [74, 75, 79]);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
@@ -635,7 +634,7 @@ class HomeController extends Controller
                         //Diên tích >= 500m & Giá < 1 tỉ
                         if ($price_short == '0') {
                             $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->whereNotIn($adr_column, [74, 75, 79]);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '>=', 500)->orderby('created_at', 'desc')
@@ -644,7 +643,7 @@ class HomeController extends Controller
                         //Diên tích >= 500m & Giá > 4 tỉ
                         if ($price_short == '5') {
                             $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->whereNotIn($adr_column, [74, 75, 79]);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '>=', 500)->orderby('created_at', 'desc')
@@ -661,7 +660,7 @@ class HomeController extends Controller
                             );
 
                             $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->whereNotIn($adr_column, [74, 75, 79]);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '>=500', 500)->orderby('created_at', 'desc')
@@ -678,7 +677,7 @@ class HomeController extends Controller
                         //Diên tích trong khoảng 30 - 500m & Giá < 1 tỉ
                         if ($price_short == '0') {
                             $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->whereNotIn($adr_column, [74, 75, 79]);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
@@ -687,7 +686,7 @@ class HomeController extends Controller
                         //Diên tích trong khoảng 30 - 500m & Giá > 4 tỉ
                         if ($price_short == '5') {
                             $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->whereNotIn($adr_column, [74, 75, 79]);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
@@ -704,7 +703,7 @@ class HomeController extends Controller
                             );
 
                             $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->whereNotIn($adr_column, [74, 75, 79]);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
@@ -719,7 +718,7 @@ class HomeController extends Controller
 
                     if ($acreage_short == '1') {
                         $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                            $query->where($adr_column, '=', $request->adr_city_id);
+                            $query->whereNotIn($adr_column, [74, 75, 79]);
                             $query->where($project_column, '=', $request->project_id);
                         }])
                             ->where('acreage', '<=', 30)->orderby('created_at', 'desc')->paginate(5);
@@ -727,7 +726,7 @@ class HomeController extends Controller
                     // Diện tích >= 500m
                     if ($acreage_short == '2') {
                         $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                            $query->where($adr_column, '=', $request->adr_city_id);
+                            $query->whereNotIn($adr_column, [74, 75, 79]);
                             $query->where($project_column, '=', $request->project_id);
                         }])
                             ->where('acreage', '>=', 500)->orderby('created_at', 'desc')->paginate(5);
@@ -743,7 +742,7 @@ class HomeController extends Controller
                         );
 
                         $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                            $query->where($adr_column, '=', $request->adr_city_id);
+                            $query->whereNotIn($adr_column, [74, 75, 79]);
                             $query->where($project_column, '=', $request->project_id);
                         }])
                             ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')->paginate(5);
@@ -758,7 +757,7 @@ class HomeController extends Controller
                     // Giá < 1 tỉ
                     if ($price_short == '0') {
                         $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                            $query->where($adr_column, '=', $request->adr_city_id);
+                            $query->whereNotIn($adr_column, [74, 75, 79]);
                             $query->where($project_column, '=', $request->project_id);
                         }])
                             ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
@@ -766,7 +765,7 @@ class HomeController extends Controller
                     // Giá > 4 tỉ
                     if ($price_short == '5') {
                         $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                            $query->where($adr_column, '=', $request->adr_city_id);
+                            $query->whereNotIn($adr_column, [74, 75, 79]);
                             $query->where($project_column, '=', $request->project_id);
                         }])
                             ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
@@ -782,7 +781,7 @@ class HomeController extends Controller
                         );
 
                         $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                            $query->where($adr_column, '=', $request->adr_city_id);
+                            $query->whereNotIn($adr_column, [74, 75, 79]);
                             $query->where($project_column, '=', $request->project_id);
                         }])
                             ->whereBetween('price', $int_price_arr)->orderby('created_at', 'desc')->paginate(5);
@@ -792,12 +791,223 @@ class HomeController extends Controller
             //Trường hợp Diện tích == Null && Giá == Null
             if ($acreage == '' && $price == '') {
                 $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
-                    $query->where($adr_column, '=', $request->adr_city_id);
+                    $query->whereNotIn($adr_column, [74, 75, 79]);
                     $query->where($project_column, '=', $request->project_id);
                 }])->paginate(5);
             }
-        }
+        } else {
+            if ($value['adr_city_id'] == '' && $value['project_id'] == '' && $value['acreage'] == '' && $value['price'] == '') {
+                $products = [];
+            } else {
+                //Trường hợp Diện tích != Null
+                if ($acreage != '') {
+                    //Trường hợp Diện tích != Null && Giá !=Null
+                    if ($price != '') {
+                        $acreage_short = $acreage;
+                        $price_short = $price;
+                        if ($acreage_short == '1') {
+                            //Diên tích <= 30m & Giá < 1 tỉ
+                            if ($price_short == '0') {
+                                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                    $query->where($adr_column, '=', $request->adr_city_id);
+                                    $query->where($project_column, '=', $request->project_id);
+                                }])
+                                    ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
+                                    ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                            }
+                            //Diên tích <= 30m & Giá >= 5 tỉ
+                            if ($price_short == '5') {
+                                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                    $query->where($adr_column, '=', $request->adr_city_id);
+                                    $query->where($project_column, '=', $request->project_id);
+                                }])
+                                    ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
+                                    ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                            }
+                            //Diên tích <= 30m & Giá trong khoảng 1 - 4 tỉ
+                            if ($price_short != '0' && $price_short != '5') {
+                                $price_arr = explode('-', $price_short);
+                                $int_price_arr = array_map(
+                                    function ($value) {
+                                        return (int)$value;
+                                    },
+                                    $price_arr
+                                );
 
+                                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                    $query->where($adr_column, '=', $request->adr_city_id);
+                                    $query->where($project_column, '=', $request->project_id);
+                                }])
+                                    ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
+                                    ->whereBetween('price', $int_price_arr)->orderby('created_at', 'desc')->paginate(5);
+                            }
+                        } elseif ($acreage_short == '2') {
+                            //Diên tích >= 500m & Giá < 1 tỉ
+                            if ($price_short == '0') {
+                                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                    $query->where($adr_column, '=', $request->adr_city_id);
+                                    $query->where($project_column, '=', $request->project_id);
+                                }])
+                                    ->where('acreage', '>=', 500)->orderby('created_at', 'desc')
+                                    ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                            }
+                            //Diên tích >= 500m & Giá > 4 tỉ
+                            if ($price_short == '5') {
+                                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                    $query->where($adr_column, '=', $request->adr_city_id);
+                                    $query->where($project_column, '=', $request->project_id);
+                                }])
+                                    ->where('acreage', '>=', 500)->orderby('created_at', 'desc')
+                                    ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                            }
+                            //Diên tích >= 500m & Giá trong khoảng 1 - 4 tỉ
+                            if ($price_short != '0' && $price_short != '5') {
+                                $price_arr = explode('-', $price_short);
+                                $int_price_arr = array_map(
+                                    function ($value) {
+                                        return (int)$value;
+                                    },
+                                    $price_arr
+                                );
+
+                                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                    $query->where($adr_column, '=', $request->adr_city_id);
+                                    $query->where($project_column, '=', $request->project_id);
+                                }])
+                                    ->where('acreage', '>=500', 500)->orderby('created_at', 'desc')
+                                    ->whereBetween('price', $int_price_arr)->orderby('created_at', 'desc')->paginate(5);
+                            }
+                        } else {
+                            $acreage_arr = explode('-', $acreage_short);
+                            $int_acreage_arr = array_map(
+                                function ($value) {
+                                    return (int)$value;
+                                },
+                                $acreage_arr
+                            );
+                            //Diên tích trong khoảng 30 - 500m & Giá < 1 tỉ
+                            if ($price_short == '0') {
+                                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                    $query->where($adr_column, '=', $request->adr_city_id);
+                                    $query->where($project_column, '=', $request->project_id);
+                                }])
+                                    ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
+                                    ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                            }
+                            //Diên tích trong khoảng 30 - 500m & Giá > 4 tỉ
+                            if ($price_short == '5') {
+                                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                    $query->where($adr_column, '=', $request->adr_city_id);
+                                    $query->where($project_column, '=', $request->project_id);
+                                }])
+                                    ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
+                                    ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                            }
+                            //Diên tích trong khoảng 30 - 500 & Giá trong khoảng 1 - 4 tỉ
+                            if ($price_short != '0' && $price_short != '5') {
+                                $price_arr = explode('-', $price_short);
+                                $int_price_arr = array_map(
+                                    function ($value) {
+                                        return (int)$value;
+                                    },
+                                    $price_arr
+                                );
+
+                                $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                    $query->where($adr_column, '=', $request->adr_city_id);
+                                    $query->where($project_column, '=', $request->project_id);
+                                }])
+                                    ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
+                                    ->whereBetween('price', $int_price_arr)->orderby('created_at', 'desc')->paginate(5);
+                            }
+                        }
+                    }
+                    //Trường hợp Diện tích != Null && Giá == Null
+                    if ($price == "") {
+                        $acreage_short = $acreage;
+                        // Diện tích <= 30m
+
+                        if ($acreage_short == '1') {
+                            $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->where($project_column, '=', $request->project_id);
+                            }])
+                                ->where('acreage', '<=', 30)->orderby('created_at', 'desc')->paginate(5);
+                        }
+                        // Diện tích >= 500m
+                        if ($acreage_short == '2') {
+                            $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->where($project_column, '=', $request->project_id);
+                            }])
+                                ->where('acreage', '>=', 500)->orderby('created_at', 'desc')->paginate(5);
+                        }
+                        // Diện tíchtrong khoảng  30 - 500m
+                        if ($acreage_short != '1' && $acreage_short != '2') {
+                            $acreage_arr = explode('-', $acreage_short);
+                            $int_acreage_arr = array_map(
+                                function ($value) {
+                                    return (int)$value;
+                                },
+                                $acreage_arr
+                            );
+
+                            $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->where($project_column, '=', $request->project_id);
+                            }])
+                                ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')->paginate(5);
+                        }
+                    }
+                }
+                //Trường hợp Diện tích == Null
+                else {
+                    // Giá != Null
+                    if ($price != '') {
+                        $price_short = $price;
+                        // Giá < 1 tỉ
+                        if ($price_short == '0') {
+                            $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->where($project_column, '=', $request->project_id);
+                            }])
+                                ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                        }
+                        // Giá > 4 tỉ
+                        if ($price_short == '5') {
+                            $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->where($project_column, '=', $request->project_id);
+                            }])
+                                ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                        }
+                        // Giá từ 1 - 4 tỉ
+                        if ($price_short != '0' && $price_short != '5') {
+                            $price_arr = explode('-', $price_short);
+                            $int_price_arr = array_map(
+                                function ($value) {
+                                    return (int)$value;
+                                },
+                                $price_arr
+                            );
+
+                            $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                                $query->where($adr_column, '=', $request->adr_city_id);
+                                $query->where($project_column, '=', $request->project_id);
+                            }])
+                                ->whereBetween('price', $int_price_arr)->orderby('created_at', 'desc')->paginate(5);
+                        }
+                    }
+                }
+                //Trường hợp Diện tích == Null && Giá == Null
+                if ($acreage == '' && $price == '') {
+                    $products = Product::with(['project' => function ($query) use ($request, $adr_column, $project_column) {
+                        $query->where($adr_column, '=', $request->adr_city_id);
+                        $query->where($project_column, '=', $request->project_id);
+                    }])->paginate(5);
+                }
+            }
+        }
         // return response()->json($products);
         return view('pages.product_of_filter', ['products' => $products, 'request' => $request->all()]);
     }

@@ -33,7 +33,8 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-5">
                                     <div class="w-100 position-relative">
-                                        <div class="text_duan">{{$projects[1]->name}}</div>
+                                        <a href="{{ URL::to('project/detail/' . $projects[1]->alias) }}"
+                                            class="text_duan">{{ $projects[1]->name }}</a>
                                         <a href="{{ URL::to('project/detail/' . $projects[1]->alias) }}">
                                             <img class="w-100 img_home_sp"
                                                 src="{{ asset('/uploads/images/projects/' . $projects[1]->thumbnail_img) }}">
@@ -44,7 +45,8 @@
                                     <div class="row m-table m-mobi">
                                         <div class="col-sm-12 col-md-6 col-lg-6">
                                             <div class="w-100 mb-4 ; position: relative;">
-                                                <div class="text_duan">{{$projects[0]->name}}</div>
+                                                <a href="{{ URL::to('project/detail/' . $projects[0]->alias) }}"
+                                                    class="text_duan">{{ $projects[0]->name }}</a>
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[0]->alias) }}">
                                                     <img class="w-100 "
@@ -53,7 +55,8 @@
 
                                             </div>
                                             <div class="w-100 position-relative">
-                                                <div class="text_duan">{{$projects[2]->name}}</div>
+                                                <a href="{{ URL::to('project/detail/' . $projects[2]->alias) }}"
+                                                    class="text_duan">{{ $projects[2]->name }}</a>
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[2]->alias) }}">
                                                     <img class="w-100 "
@@ -65,7 +68,8 @@
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-6 m-mobi">
                                             <div class="w-100 mb-4 position-relative">
-                                                <div class="text_duan">{{$projects[3]->name}}</div>
+                                                <a href="{{ URL::to('project/detail/' . $projects[3]->alias) }}"
+                                                    class="text_duan">{{ $projects[3]->name }}</a>
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[3]->alias) }}">
                                                     <img class="w-100 "
@@ -74,7 +78,8 @@
 
                                             </div>
                                             <div class="w-100 position-relative">
-                                                <div class="text_duan">{{$projects[4]->name}}</div>
+                                                <a href="{{ URL::to('project/detail/' . $projects[4]->alias) }}"
+                                                    class="text_duan">{{ $projects[4]->name }}</a>
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[4]->alias) }}">
                                                     <img class="w-100 "
@@ -99,10 +104,11 @@
                                 <div class="col-xs-12 col-md-6 col-lg-4">
 
                                     <a href="{{ URL::to('post/detail/' . $value->alias) }}">
-                                    <img class="w-100 heigh_img" src="{{ asset('uploads/images/posts/' . $value->image) }}">
+                                        <img class="w-100 heigh_img"
+                                            src="{{ asset('uploads/images/posts/' . $value->image) }}">
 
-                                    <p class="my-1">{{ $value->title }}</p>
-                                   </a>
+                                        <p class="my-1">{{ $value->title }}</p>
+                                    </a>
                                 </div>
                             @endforeach
 
@@ -319,22 +325,23 @@
         // alert(window.pageYOffset);
         var srollHtml = document.querySelector('html').clientHeight;
         var srolFooter = document.querySelector('.footer-static').clientHeight;
-        var rang = document.querySelector('.custom-navbar').clientHeight + document.querySelector('.page-header').clientHeight + document.querySelector('.post_show').clientHeight ;
+        var rang = document.querySelector('.custom-navbar').clientHeight + document.querySelector('.page-header')
+            .clientHeight + document.querySelector('.post_show').clientHeight;
         // console.log(rang);
-        var srollBody = (srollHtml - srolFooter) ;
+        var srollBody = (srollHtml - srolFooter);
         // console.log(rang);
         var srollEnd = srollBody - rang;
         // console.log(srollEnd);
 
-        var currentScrollPos = window.pageYOffset ;
-        if(currentScrollPos == 0 || currentScrollPos == 100){
+        var currentScrollPos = window.pageYOffset;
+        if (currentScrollPos == 0 || currentScrollPos == 100) {
             document.querySelector('.post_show').style.top = 0 + 'px';
             document.querySelector('.post_show1').style.top = 0 + 'px';
         }
         if (currentScrollPos >= 300 && currentScrollPos < srollEnd) {
 
-          document.querySelector('.post_show').style.top = (currentScrollPos - 200) + 'px';
-          document.querySelector('.post_show1').style.top = (currentScrollPos - 200) + 'px';
+            document.querySelector('.post_show').style.top = (currentScrollPos - 200) + 'px';
+            document.querySelector('.post_show1').style.top = (currentScrollPos - 200) + 'px';
         }
 
     }

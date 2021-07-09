@@ -172,7 +172,7 @@
                     </div>
                     <br>
                     <div class="detail-1">
-                        <h3><span class="title-detail">Thng tin mô tả</span></h3>
+                        <h3><span class="title-detail">Thông tin mô tả</span></h3>
                     </div>
                     <div class="des-product">
                         {!! $product->description !!}
@@ -210,7 +210,7 @@
             </div>
 
             <div class="product-related">
-                <h3><span class="title-related">Bất động sn cùng khu vực</span></h3>
+                <h3><span class="title-related">Bất động sản cùng khu vực</span></h3>
                 <div class="row">
                     <div class="owl-carousel owl-theme" id="slider">
                         @foreach ($products_related as $product)
@@ -269,7 +269,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    {{-- <div class="col-6">
                         <div class="row">
                             <div class="col-5">
                                 <a href="javascript:void(Tawk_API.toggle())"><img
@@ -277,10 +277,10 @@
                             </div>
                             <div class="col-7" style="padding:0">
                                 <span><b>Chat now</b></span><br>
-                                <span>Tư vn 24/7</span>
+                                <span>Tư vấn 24/7</span>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <br>
                 <div class="contact-mobile">

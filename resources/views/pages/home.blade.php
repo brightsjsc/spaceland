@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-2 position-relative post-left">
                         <div class="mt-3 position-absolute post_show">
-                            <img class="w-100" src="{{ asset('uploads/images/image-cate/PT2.jpg') }}">
+                            <img class="w-75" src="{{ asset('uploads/images/image-cate/PT2.jpg') }}">
                         </div>
                     </div>
                     <div class="col all_base">
@@ -117,7 +117,7 @@
                     </div>
                     <div class="col-2 position-relative post-right">
                         <div class="mt-3 position-absolute post_show1">
-                            <img class="w-100" src="{{ asset('uploads/images/image-cate/PT1.jpg') }}">
+                            <img class="w-75" style="float:right" src="{{ asset('uploads/images/image-cate/PT1.jpg') }}">
                         </div>
                     </div>
                 </div>

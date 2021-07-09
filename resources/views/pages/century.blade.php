@@ -204,7 +204,7 @@
         </div>
         <br>
         <div style="
-                                 background-image: url('{{ asset('/assets/img/image 14.jpg') }}');
+                                 background-image: url('{{ asset('/assets/img/img-color.jpg') }}');
                                     background-size: 100% 100%; height:auto;">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">

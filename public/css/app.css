@@ -24556,9 +24556,7 @@ a.text-dark:hover, a.text-dark:focus {
   right: 0;
 } */
 
-.img_home_sp{
-    aspect-ratio: 1 / 1.43;
-}
+
 .heigh_img{
     max-height: 230px;
 }
@@ -24582,11 +24580,22 @@ a.text-dark:hover, a.text-dark:focus {
     line-height: 20px;
     color: #FFF;
 }
-
-  @media (max-width: 990px) {
+@media (min-width: 992px) {
     .img_home_sp{
-        height: auto;
+        aspect-ratio: 1 / 1.43;
     }
+
+
+    }
+  @media (max-width: 991px) {
+    .img_home_sp{
+        aspect-ratio:none;
+
+
+    }
+    /* .img_home_sp{
+        height: auto;
+    } */
     .m-table{
         margin-top: 1.5rem;
     }
@@ -24611,5 +24620,6 @@ a.text-dark:hover, a.text-dark:focus {
         overflow: hidden;
         display: block;
     }
+
   }
 

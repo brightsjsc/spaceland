@@ -24574,7 +24574,14 @@ a.text-dark:hover, a.text-dark:focus {
     transition: .1s linear ease ;
 }
 
-
+.text_duan{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: 26px;
+    line-height: 20px;
+    color: #FFF;
+}
 
   @media (max-width: 765px) {
     .img_home_sp{

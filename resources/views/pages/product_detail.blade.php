@@ -145,7 +145,7 @@
 
                         <div class="row">
                             <div class="col-3 title-info">
-                                <strong>Số phòng ng:</strong>
+                                <strong>Số phòng ngủ:</strong>
                             </div>
                             <div class="col-9 content-info">
                                 {{ $product->room_number }}
@@ -163,7 +163,7 @@
 
                         <div class="row">
                             <div class="col-3 title-info">
-                                <strong>Ni tht:</strong>
+                                <strong>Nội thất:</strong>
                             </div>
                             <div class="col-9 content-info">
                                 {{ $product->furniture }}

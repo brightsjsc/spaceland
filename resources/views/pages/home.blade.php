@@ -16,7 +16,7 @@
         <div class="right-poster">
             <img src="{{asset('uploads/images/PT1.jpg')}}" alt="" width="100%">
         </div> --}}
-        <div class="top-category position-relative">
+        <div class="top-category position-relative mt-2">
 
 
 

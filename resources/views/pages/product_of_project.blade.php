@@ -166,7 +166,7 @@
         </div>
         <div class="col-md-4">
             {{-- @include('layouts.cate-area') --}}
-            <div class="project-related">
+            {{-- <div class="project-related">
                 <div class="project-header" >
                     <h3 class="title-pro">{{ "Dự án khác tại " .$city->name_local }}</h3>
                 </div>
@@ -177,7 +177,7 @@
                         @endforeach
                     </ul>
                 </div>
-            </div>
+            </div> --}}
             <div class="project-related">
                 <div class="project-header">
                    <h3 class="title-pro"> Liên Hệ</h3>

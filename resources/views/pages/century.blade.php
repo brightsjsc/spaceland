@@ -368,7 +368,7 @@
                     </div>
                     <div class="col-md-4">
                         <br>
-                        <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline text-center">Thanh toán
+                        <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline text-center">Giá bán
                         </h1>
                         <br>
                         <div style="padding: 0 100 40 0">

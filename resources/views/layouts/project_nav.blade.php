@@ -54,7 +54,7 @@
                     </a>
                 </li>
                 <li class="menu-child">
-                    <a href="#payment" class="text-white">Thanh toán
+                    <a href="#payment" class="text-white">Giá bán
                     </a>
                 </li>
                 <li class="menu-child">

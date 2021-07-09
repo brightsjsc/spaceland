@@ -263,8 +263,7 @@
                                         src="{{asset('assets/img/icon-hotline.gif')}}" width="100%" alt=""></a>
                             </div>
                             <div class="col-7" style="padding:0">
-                                <span><b>Hotline</b></span>
-                                <!--<span>{{ $product->contact_mobile }}</span>-->
+                                <span><b>Hotline</b> 0913144599</span>
                                 <span></span>
 
                             </div>
@@ -305,7 +304,7 @@
                     </ul>
                 </div>
             </div>
-            @include('layouts.cate-area')
+            {{-- @include('layouts.cate-area') --}}
             <div class="project-related">
                 <div class="project-header">
                     <h3 class="title-pro"> Liên Hệ</h3>

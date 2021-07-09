@@ -20,7 +20,7 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
 
-    <link rel="canonical" href="http://thuecanhohn.com" />
+    <link rel="canonical" href="http://spaceland.vn" />
     <!-- Primary Meta Tags -->
     <meta name="title" content="@yield('head_title')">
     <meta name="keywords" content="@yield('keyword')">
@@ -31,18 +31,18 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://thuecanhohn.com">
+    <meta property="og:url" content="http://spaceland.vn">
     <meta property="og:title" content="@yield('head_title')">
     <meta property="og:description" content="@yield('contain-content')">
     <meta property="og:image" content="@yield('image-page')">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="http://thuecanhohn.com">
+    <meta property="twitter:url" content="http://spaceland.vn">
     <meta property="twitter:title" content="@yield('head_title')">
     <meta property="twitter:description" content="@yield('contain-content')">
     <meta property="twitter:image" content="@yield('image-page')">
-    <meta property="og:site_name" content="Hong Hung Land" />
+    <meta property="og:site_name" content="Space Land" />
 
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />

@@ -9,8 +9,14 @@
 
 @section('content')
     <div class="container-fuild" style="">
-        <div style="filter: brightness(65%);">
-            <img src="{{ asset('/uploads/images/projects/' . $project->background_img) }}" width="100%" height="35%">
+        <div class="dethail_banner" style="filter: brightness(65%);background-image: url('{{ asset('/uploads/images/projects/' . $project->background_img) }}');
+            width:100%;
+            height:40vh;
+    background-repeat:no-repeat !important;
+    background-position:center !important;
+    background-size:cover !important;
+    ">
+
         </div>
         <div class="container">
             <div class="text-center" id="Century">
@@ -18,7 +24,7 @@
                 <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline">{{ $project->name }}</h1>
                 <br>
                 <div>
-                    <table class="table table-bordered border-primary" style="width:70%;margin-left:15%;margin-right:15%;">
+                    <table class="table table-bordered border-primary" style="width:80%;margin: auto;">
                         <thead>
                             <th style="color: white; background:#E65D26;width:30%;line-height:40px">Tên thương mại</th>
                             <th style="color: white; background:#E65D26; text-align: center; line-height:40px">
@@ -82,7 +88,7 @@
                 </div>
             </div>
         </div>
-        <div
+        <div class="mt-4"
             style=" background-image: url('{{ asset('/uploads/images/projects/' . $project->image_des) }}');background-size: 100% 100%; height:auto;padding:0">
             <div class="row w-100">
                 <div class="col-5">
@@ -110,7 +116,7 @@
         <br>
         <div id="Scale" style="background: white; padding:0">
             <div class="row w-100">
-                <div class="col">
+                <div class="col-6">
                     <div style="margin-left: 10%; height:50%">
                         <br>
                         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline">Quy mô dự án</h1>
@@ -126,9 +132,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col" style="border: 2px solid #E65D26;  ">
+                <div class="col-6" style="border: 2px solid #E65D26; display:flex ; ">
                     <img src="{{ asset('/uploads/images/projects/' . $project->image_scale) }}" alt="" style=" width:100%;
-                                                                                height:100%;padding:3%">
+                                                                                padding:3%">
                 </div>
             </div>
         </div>
@@ -138,8 +144,8 @@
             <h1 style="font-weight: 900; color:#003456;" class="text-decoration-underline text-center">Vị trí dự án</h1>
             <br>
             <div class="row w-100" style="background-color: #003456; margin: 0">
-                <div class="col" style="padding: 0">
-                    <div style="width:80%; margin: 5% 0;background: rgba(0, 0, 0, 0.6); color:white;float: right">
+                <div class="col-6" style="padding: 0 ; margin: auto;">
+                    <div style="width:85%; margin: 5% auto;background: rgba(0, 0, 0, 0.6); color:white;float: right">
                         <div style="background: #E65D26; height:10px"></div>
                         <br>
                         <h3 style="margin-left: 10px; margin-right:10%">GIỚI THIỆU VỀ DỰ ÁN @php
@@ -152,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col" style=" height:auto;float: left; padding-top:2%;padding-bottom:2%">
+                <div class="col-6" style=" height:auto;float: left; padding-top:2%;padding-bottom:2%">
                     <img src="{{ asset('/uploads/images/projects/' . $project->image_locate) }}" alt="" style=" width:100%;
                                                                                 height:100%;">
                 </div>
@@ -161,7 +167,7 @@
         <br>
         <div id="investor" style="background: white">
             <div class="row w-100">
-                <div class="col">
+                <div class="col-6">
                     <div style="margin-left: 10%">
                         <br>
                         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline">Chủ đầu tư</h1>
@@ -171,20 +177,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col" style="border: 2px solid #E65D26; height:40%;margin-top:5%">
+                <div class="col-6" style="border: 2px solid #E65D26; display:flex;">
                     <img src="{{ asset('/uploads/images/projects/' . $project->image_investor) }}" alt="" style=" width:100%;
-                                                                                height:100%; padding:3%">
+                                                                                 padding:3%">
                 </div>
             </div>
         </div>
         <br>
         <div id="utilities" style="background: white">
             <div class="row w-100">
-                <div class="col" style="border: 2px solid #E65D26; height:40%">
+                <div class="col-6" style="border: 2px solid #E65D26; display:flex;">
                     <img src="{{ asset('/uploads/images/projects/' . $project->image_utilities) }}" alt="" style=" width:100%;
-                                                                                height:100%;padding:3%">
+                                                                                padding:3%">
                 </div>
-                <div class="col">
+                <div class="col-6">
                     <div style="margin-left: 5%">
                         <br>
                         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline">Tiện ích</h1>
@@ -198,19 +204,18 @@
         </div>
         <br>
         <div style="
-                                    background:  rgba(252, 174, 143, 0.87) url('{{ asset('/assets/img/image 14.jpg') }}');
-                                    background-blend-mode: color-burn;
+                                 background-image: url('{{ asset('/assets/img/image 14.jpg') }}');
                                     background-size: 100% 100%; height:auto;">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row" style="padding:3%">
-                            <div class="col"
-                                style="border: 2px solid white; padding:3%; height:80%">
+                            <div class="col-6"
+                                style="border: 2px solid white; padding:3%; display:flex;">
                                 <img src="{{ asset('/uploads/images/projects/' . $project->image_more) }}" alt="" style=" width:100%;
-                                                                                height:100%;">
+                                                                                ">
                             </div>
-                            <div class="col">
+                            <div class="col-6">
                                 <div style="margin-left: 5%; color:white">
                                     <br>
                                     <div>
@@ -222,12 +227,12 @@
                     </div>
                     <div class="carousel-item">
                         <div class="row" style="padding:3%">
-                            <div class="col"
-                            style="border: 2px solid white; padding:3%; height:80%">
+                            <div class="col-6"
+                            style="border: 2px solid white; padding:3%; display:flex;">
                             <img src="{{ asset('/uploads/images/projects/' . $project->image_more_2) }}" alt="" style=" width:100%;
-                                                                                height:100%;">
+                                                                               ">
                             </div>
-                            <div class="col">
+                            <div class="col-6">
                                 <div style="margin-left: 5%; color:white">
                                     <br>
                                     <div>
@@ -239,12 +244,12 @@
                     </div>
                     <div class="carousel-item">
                         <div class="row" style="padding:3%;">
-                            <div class="col"
-                            style="border: 2px solid white; padding:3%; height:80%">
+                            <div class="col-6"
+                            style="border: 2px solid white; padding:3%; display:flex;">
                                 <img src="{{ asset('/uploads/images/projects/' . $project->image_more_3) }}" alt="" style=" width:100%;
-                                                                                height:100%;">
+                                                                                ">
                             </div>
-                            <div class="col">
+                            <div class="col-6">
                                 <div style="margin-left: 5%; color:white">
                                     <br>
                                     <div>
@@ -272,7 +277,7 @@
         <br>
         <br>
         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline text-center" id="ground">Mặt bằng</h1>
-
+        <br>
         <div
             style=" background-image: url('{{ asset('/uploads/images/projects/' . $project->image_ground) }}');background-size: 100% 100%;">
             <div class="row w-100">
@@ -280,7 +285,7 @@
                 <div class="col-md"> </div>
 
                 <div class="col-md">
-                    <div style="width:60%; margin: 50px 0;background: rgba(0, 0, 0, 0.6); color:white" class="mx-auto">
+                    <div style="width:70%; margin: 50px 0;background: rgba(0, 0, 0, 0.6); color:white" class="mx-auto">
                         <div style="background: #E65D26; height:10px"></div>
                         <br>
                         <h3 style="margin-left: 10px; margin-right:10%">MẶT BẰNG THIẾT KẾ DỰ ÁN @php
@@ -304,16 +309,17 @@
                         <br>
                         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline text-center">Thiết kế</h1>
                         <br>
-                        <div style="padding: 0 10 40 100">
+                        <div style="padding: 15px;
+                        text-align: left;">
                             <?php echo $project['design']; ?>
 
                         </div>
                     </div>
-                    <div class="col-md-8">
-                        <div class="" style="height:400; padding: 30 100 30 50">
+                    <div class="col-md-8" >
+
                             <img src="{{ asset('/uploads/images/projects/' . $project->image_design) }}" alt="" style=" width:100%;
-                                        height:100%;">
-                        </div>
+                                        max-height:400px; padding: 30 8% 30 50">
+
                     </div>
 
         </div>
@@ -321,17 +327,18 @@
         <div class="row w-100" id="house" style="border-top: 1px solid ;  margin:0">
 
                     <div class="col-md-8">
-                        <div class="col" style="height:400; padding: 30 100 30 50">
+
 
                             <img src="{{ asset('/uploads/images/projects/' . $project->image_house) }}" alt="" style=" width:100%;
-                                        height:100%;">
-                        </div>
+                                         max-height:400px; padding: 30 8% 30 50">
+
                     </div>
                     <div class="col-md-4">
                         <br>
                         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline text-center">Nhà mẫu</h1>
                         <br>
-                        <div style="padding: 0 100 40 0">
+                        <div style="padding: 15px;
+                        text-align: right;">
                             <?php echo $project['model_house']; ?>
 
                         </div>
@@ -344,34 +351,35 @@
                         <br>
                         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline text-center">Nội thất</h1>
                         <br>
-                        <div style="padding: 0 10 40 100">
+                        <div style="padding:15px;
+                        text-align:left;">
                             <?php echo $project['furniture']; ?>
 
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <div class="col" style="height:400; padding: 30 100 30 50">
+
                             <img src="{{ asset('/uploads/images/projects/' . $project->image_furniture) }}" alt="" style=" width:100%;
-                                        height:100%;">
-                        </div>
+                                         max-height:400px; padding: 30 8% 30 50">
+
                     </div>
 
         </div>
         <div class="row w-100" id="payment" style="border-top: 1px solid ; border-bottom: 1px solid ; margin:0">
 
                     <div class="col-md-8">
-                        <div class="col" style="height:400; padding: 30 100 30 50">
 
                             <img src="{{ asset('/uploads/images/projects/' . $project->image_payment) }}" alt="" style=" width:100%;
-                                        height:100%;">
-                        </div>
+                                         max-height:400px; padding: 30 8% 30 50">
+
                     </div>
                     <div class="col-md-4">
                         <br>
                         <h1 style="font-weight: 900; color:#E65D26" class="text-decoration-underline text-center">Giá bán
                         </h1>
                         <br>
-                        <div style="padding: 0 100 40 0">
+                        <div style="padding: 15px;
+                        text-align: right;">
                             <?php echo $project['payment']; ?>
                         </div>
                     </div>

@@ -24599,9 +24599,7 @@ a.text-dark:hover, a.text-dark:focus {
     .m-table{
         margin-top: 1.5rem;
     }
-    .m-mobi{
-        margin-top: 1.5rem;
-    }
+
     .post-left,
     .post-right{
 
@@ -24613,7 +24611,11 @@ a.text-dark:hover, a.text-dark:focus {
        margin: auto;
    }
   }
-
+   @media (max-width: 765px){
+        .m-mobi{
+        margin-top: 1.5rem;
+    }
+   }
    @media (min-width: 765px) {
     .post-left,
     .post-right{

@@ -24583,7 +24583,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: #FFF;
 }
 
-  @media (max-width: 780px) {
+  @media (max-width: 990px) {
     .img_home_sp{
         height: auto;
     }

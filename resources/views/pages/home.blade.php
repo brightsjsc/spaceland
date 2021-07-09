@@ -33,6 +33,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-5">
                                     <div class="w-100">
+                                        <div>{{$projects[1]->name}}</div>
                                         <a href="{{ URL::to('project/detail/' . $projects[1]->alias) }}">
                                             <img class="w-100 img_home_sp"
                                                 src="{{ asset('/uploads/images/projects/' . $projects[1]->thumbnail_img) }}">
@@ -43,6 +44,8 @@
                                     <div class="row m-table m-mobi">
                                         <div class="col-sm-12 col-md-6 col-lg-6">
                                             <div class="w-100 mb-4">
+                                                <div>{{$projects[0]->name}}</div>
+
                                                 <a href="{{ URL::to('project/detail/' . $projects[0]->alias) }}">
                                                     <img class="w-100 "
                                                         src="{{ asset('/uploads/images/projects/' . $projects[0]->thumbnail_img) }}">
@@ -50,6 +53,7 @@
 
                                             </div>
                                             <div class="w-100 ">
+                                                <div>{{$projects[2]->name}}</div>
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[2]->alias) }}">
                                                     <img class="w-100 "
@@ -61,6 +65,7 @@
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-6 m-mobi">
                                             <div class="w-100 mb-4">
+                                                <div>{{$projects[3]->name}}</div>
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[3]->alias) }}">
                                                     <img class="w-100 "
@@ -69,6 +74,7 @@
 
                                             </div>
                                             <div class="w-100">
+                                                <div>{{$projects[4]->name}}</div>
 
                                                 <a href="{{ URL::to('project/detail/' . $projects[4]->alias) }}">
                                                     <img class="w-100 "

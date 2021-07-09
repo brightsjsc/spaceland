@@ -6,6 +6,9 @@
 
 @section('content')
     @include('layouts.page-header')
+    @if (Session::has('success'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('success') }}</p>
+    @endif
     <div class="container" style="padding-top: 20px;">
         <div class="row">
             <div class="col-md-12">
@@ -121,8 +124,9 @@
                                         @else
                                             @if ($products->currentPage() <= 5)
                                                 @for ($i = 1; $i <= 6; $i++) <li class="{{ $products->currentPage() == $i ? 'page-item active disabled' : 'page-item' }}">
-                                                            <a href="{{ $products->url($i) }}" class="page-link">{{ $i }}</a>
-                                                        </li> @endfor <li class="page-item disabled">
+                                                                    <a href="{{ $products->url($i) }}" class="page-link">{{ $i }}</a>
+                                                                </li> @endfor <li
+                                                    class="page-item disabled">
                                                     <a href="#" class="page-link no-border">...</a>
                                                     </li>
                                                     <li class="page-item">
@@ -199,8 +203,9 @@
                                         @else
                                             @if ($products->currentPage() <= 5)
                                                 @for ($i = 1; $i <= 6; $i++) <li class="{{ $products->currentPage() == $i ? 'page-item active disabled' : 'page-item' }}">
-                                                            <a href="{{ url()->full() . '&page=' . $i }}" class="page-link">{{ $i }}</a>
-                                                        </li> @endfor <li class="page-item disabled">
+                                                                    <a href="{{ url()->full() . '&page=' . $i }}" class="page-link">{{ $i }}</a>
+                                                                </li> @endfor <li
+                                                    class="page-item disabled">
                                                     <a href="#" class="page-link no-border">...</a>
                                                     </li>
                                                     <li class="page-item">

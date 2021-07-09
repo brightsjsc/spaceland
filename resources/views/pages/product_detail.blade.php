@@ -3,9 +3,9 @@
 @section('head_title')
     {{ $product->name }}
 @endsection
-@section('contain-content')
+{{-- @section('contain-content')
     {!! $product->description !!}
-@endsection
+@endsection --}}
 @section('image-page')
     {{ asset('uploads/images/products/') . $product->image }}
 @endsection

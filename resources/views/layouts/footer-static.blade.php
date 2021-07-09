@@ -14,7 +14,7 @@
                         <i class="fa fa-bolt"></i> Hotline: 091 314 45 99
                     </li>
                     <li>
-                        <i class="fa fa-map-marker"></i> Address: 36A Nguyễn Gia Trí, Phường 25, Quận Bình Thành, Tp.Hồ
+                        <i class="fa fa-map-marker"></i> Address: 36A Nguyễn Gia Trí, Phường 25, Quận Bình Thạnh, Tp.Hồ
                         Chí Minh.
                     </li>
                 </ul>

@@ -13,9 +13,9 @@
             <span class="navbar-toggler-icon icon-bar"></span>
         </button>
         <div class="menu-mobile-background"></div>
-        <div class="menu-mobile-area d-none d-lg-block">
+        <div class="menu-mobile-area d-none d-lg-block" style="">
             <span class="fa fa-times menu-mobile-close"></span>
-            <ul class="menu-mobile list-style-none">
+            <ul class="menu-mobile list-style-none" >
                 <li class="menu-child">
                     <a href="#Century" class="text-white">Giới thiệu
                     </a>

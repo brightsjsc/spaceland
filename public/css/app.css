@@ -24580,9 +24580,12 @@ a.text-dark:hover, a.text-dark:focus {
     line-height: 20px;
     color: #FFF;
 }
+*{
+    scroll-padding-top:100px
+}
 @media (min-width: 992px) {
     .img_home_sp{
-        aspect-ratio: 1 / 1.43;
+        aspect-ratio: 1 / 1.42;
     }
 
 

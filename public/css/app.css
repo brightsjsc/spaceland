@@ -24733,6 +24733,9 @@ a.text-dark:hover, a.text-dark:focus {
     width:80%;
     margin: auto;
 }
+.text_duan:hover{
+    text-decoration: none !important;
+}
 @media (min-width: 992px) and (max-width: 1200px){
     *{
         scroll-padding-top:140px

@@ -398,7 +398,7 @@
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-outline-warning" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                    <button class="btn btn-outline-warning btn-detail" type="button" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
                                     {{$project->quest_1}}
                                     </button>
@@ -415,7 +415,7 @@
                         <div class="card">
                             <div class="card-header" id="headingTwo">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-outline-warning collapsed" type="button" data-toggle="collapse"
+                                    <button class="btn btn-outline-warning collapsed btn-detail" type="button" data-toggle="collapse"
                                         data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         {{$project->quest_2}}
                                     </button>
@@ -430,7 +430,7 @@
                         <div class="card">
                             <div class="card-header" id="headingThree">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-outline-warning collapsed" type="button" data-toggle="collapse"
+                                    <button class="btn btn-outline-warning collapsed btn-detail" type="button" data-toggle="collapse"
                                         data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         {{$project->quest_3}}
                                     </button>
@@ -447,9 +447,10 @@
                         <div class="card">
                             <div class="card-header" id="headingFour">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-outline-warning collapsed" type="button" data-toggle="collapse"
+                                    <button class="btn btn-outline-warning collapsed btn-detail" type="button" data-toggle="collapse"
                                         data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                         {{$project->quest_4}}
+
 
                                     </button>
                                 </h2>

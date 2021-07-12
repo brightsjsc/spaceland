@@ -24626,7 +24626,9 @@ a.text-dark:hover, a.text-dark:focus {
     }
 
   }
-
+.img-post{
+    width: 90%;
+}
 /* detail */
 *{
     scroll-padding-top:100px
@@ -24766,6 +24768,11 @@ a.text-dark:hover, a.text-dark:focus {
     .img-design{
         padding: 0;
     }
+    .btn-detail{
+        font-size:12px;
+        height: 50px;
+    }
+
 }
 @media (max-width: 765px){
     .wrapper-full-page h1
@@ -24798,16 +24805,20 @@ a.text-dark:hover, a.text-dark:focus {
     .detail-questions{
         width:95%;
     }
-
-}
-@media (max-width: 400px)
-{
     *{
-        scroll-padding-top:50px
+        scroll-padding-top:65px
     }
     .navbar-brand{
         margin: 0;
-        width: 150px;
+        width: 160px;
         padding: 0;
+    }
+
+}
+@media (max-width: 450px)
+{
+    .btn-detail{
+        font-size:12px;
+        height: 65px;
     }
 }

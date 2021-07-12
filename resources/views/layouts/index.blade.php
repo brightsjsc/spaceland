@@ -2,9 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <script id='NAPhoneMobileCRM-widget-script'
-        src='https://cdn.na.com.vn/scripts/NAPhoneCRM.js?business_id=40563822048a43eda9d4b9857e1a8291'
-        type='text/javascript' charset='UTF-8' async></script>
+
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=yes">
     <title>@yield('head_title')</title>

@@ -93,7 +93,7 @@
                                     </div>
                                     <div class="product-content">
                                         <span>Thông tin chi tiết:</span><br>
-                                        <span>Căn hộ rộng : {!! $product->acreage !!} m2</span><br>
+                                        <span>Sản phẩm rộng : {!! $product->acreage !!} m2</span><br>
                                         <span>Tình Trạng : {!! $product->furniture !!}</span>
                                     </div>
                                     <!-- <div class="product-created">

@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="product-content">
                                         <p>Thông tin chi tiết:</p>
-                                        <p>Căn hộ rộng : {!! $product->acreage !!} m2</p>
+                                        <p>Sản phẩm rộng : {!! $product->acreage !!} m2</p>
                                         <p>Tình Trạng : {!! $product->furniture !!}</p>
                                     </div>
                                 </div>

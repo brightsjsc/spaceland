@@ -48,11 +48,12 @@
                                 <select class="form-select" aria-label="Default select example" name="price">
                                     <option selected value="">- Giá - </option>
 
-                                    <option value="0"> dưới 1 tỷ</option>
-                                    <option value="1000000000 - 2000000000">từ 1 - 2 tỷ</option>
-                                    <option value="2000000000 - 3000000000">từ 2 - 3 tỷ</option>
-                                    <option value="3000000000 - 4000000000">từ 3 - 4 tỷ</option>
-                                    <option value="5">trên 4 tỷ</option>
+                                    <option value="0"> dưới 10 triệu</option>
+                                    <option value="10000000 - 20000000">10 triệu - 20 triệu</option>
+                                    <option value="20000000 - 30000000">20 triệu - 30 triệu</option>
+                                    <option value="30000000 - 40000000">30 triệu - 40 triệu</option>
+                                    <option value="40000000 - 50000000">40 triệu - 50 triệu</option>
+                                    <option value="5">trên 50 triệu</option>
                                 </select>
                             </div>
 

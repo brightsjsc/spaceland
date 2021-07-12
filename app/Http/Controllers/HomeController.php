@@ -602,7 +602,7 @@ class HomeController extends Controller
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
-                                ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                                ->where('price', '<=', 10000000)->orderby('created_at', 'desc')->paginate(5);
                         }
                         //Diên tích <= 30m & Giá >= 5 tỉ
                         if ($price_short == '5') {
@@ -611,7 +611,7 @@ class HomeController extends Controller
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
-                                ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                                ->where('price', '>=', 50000000)->orderby('created_at', 'desc')->paginate(5);
                         }
                         //Diên tích <= 30m & Giá trong khoảng 1 - 4 tỉ
                         if ($price_short != '0' && $price_short != '5') {
@@ -638,7 +638,7 @@ class HomeController extends Controller
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '>=', 500)->orderby('created_at', 'desc')
-                                ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                                ->where('price', '<=', 10000000)->orderby('created_at', 'desc')->paginate(5);
                         }
                         //Diên tích >= 500m & Giá > 4 tỉ
                         if ($price_short == '5') {
@@ -647,7 +647,7 @@ class HomeController extends Controller
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->where('acreage', '>=', 500)->orderby('created_at', 'desc')
-                                ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                                ->where('price', '>=', 50000000)->orderby('created_at', 'desc')->paginate(5);
                         }
                         //Diên tích >= 500m & Giá trong khoảng 1 - 4 tỉ
                         if ($price_short != '0' && $price_short != '5') {
@@ -681,7 +681,7 @@ class HomeController extends Controller
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
-                                ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                                ->where('price', '<=', 10000000)->orderby('created_at', 'desc')->paginate(5);
                         }
                         //Diên tích trong khoảng 30 - 500m & Giá > 4 tỉ
                         if ($price_short == '5') {
@@ -690,7 +690,7 @@ class HomeController extends Controller
                                 $query->where($project_column, '=', $request->project_id);
                             }])
                                 ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
-                                ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                                ->where('price', '>=', 50000000)->orderby('created_at', 'desc')->paginate(5);
                         }
                         //Diên tích trong khoảng 30 - 500 & Giá trong khoảng 1 - 4 tỉ
                         if ($price_short != '0' && $price_short != '5') {
@@ -760,7 +760,7 @@ class HomeController extends Controller
                             $query->whereNotIn($adr_column, [74, 75, 79]);
                             $query->where($project_column, '=', $request->project_id);
                         }])
-                            ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                            ->where('price', '<=', 10000000)->orderby('created_at', 'desc')->paginate(5);
                     }
                     // Giá > 4 tỉ
                     if ($price_short == '5') {
@@ -768,7 +768,7 @@ class HomeController extends Controller
                             $query->whereNotIn($adr_column, [74, 75, 79]);
                             $query->where($project_column, '=', $request->project_id);
                         }])
-                            ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                            ->where('price', '>=', 50000000)->orderby('created_at', 'desc')->paginate(5);
                     }
                     // Giá từ 1 - 4 tỉ
                     if ($price_short != '0' && $price_short != '5') {
@@ -813,7 +813,7 @@ class HomeController extends Controller
                                     $query->where($project_column, '=', $request->project_id);
                                 }])
                                     ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
-                                    ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                                    ->where('price', '<=', 10000000)->orderby('created_at', 'desc')->paginate(5);
                             }
                             //Diên tích <= 30m & Giá >= 5 tỉ
                             if ($price_short == '5') {
@@ -822,7 +822,7 @@ class HomeController extends Controller
                                     $query->where($project_column, '=', $request->project_id);
                                 }])
                                     ->where('acreage', '<=', 30)->orderby('created_at', 'desc')
-                                    ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                                    ->where('price', '>=', 50000000)->orderby('created_at', 'desc')->paginate(5);
                             }
                             //Diên tích <= 30m & Giá trong khoảng 1 - 4 tỉ
                             if ($price_short != '0' && $price_short != '5') {
@@ -849,7 +849,7 @@ class HomeController extends Controller
                                     $query->where($project_column, '=', $request->project_id);
                                 }])
                                     ->where('acreage', '>=', 500)->orderby('created_at', 'desc')
-                                    ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                                    ->where('price', '<=', 10000000)->orderby('created_at', 'desc')->paginate(5);
                             }
                             //Diên tích >= 500m & Giá > 4 tỉ
                             if ($price_short == '5') {
@@ -858,7 +858,7 @@ class HomeController extends Controller
                                     $query->where($project_column, '=', $request->project_id);
                                 }])
                                     ->where('acreage', '>=', 500)->orderby('created_at', 'desc')
-                                    ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                                    ->where('price', '>=', 50000000)->orderby('created_at', 'desc')->paginate(5);
                             }
                             //Diên tích >= 500m & Giá trong khoảng 1 - 4 tỉ
                             if ($price_short != '0' && $price_short != '5') {
@@ -892,7 +892,7 @@ class HomeController extends Controller
                                     $query->where($project_column, '=', $request->project_id);
                                 }])
                                     ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
-                                    ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                                    ->where('price', '<=', 10000000)->orderby('created_at', 'desc')->paginate(5);
                             }
                             //Diên tích trong khoảng 30 - 500m & Giá > 4 tỉ
                             if ($price_short == '5') {
@@ -901,7 +901,7 @@ class HomeController extends Controller
                                     $query->where($project_column, '=', $request->project_id);
                                 }])
                                     ->whereBetween('acreage', $int_acreage_arr)->orderby('created_at', 'desc')
-                                    ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                                    ->where('price', '>=', 50000000)->orderby('created_at', 'desc')->paginate(5);
                             }
                             //Diên tích trong khoảng 30 - 500 & Giá trong khoảng 1 - 4 tỉ
                             if ($price_short != '0' && $price_short != '5') {
@@ -971,7 +971,7 @@ class HomeController extends Controller
                                 $query->where($adr_column, '=', $request->adr_city_id);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
-                                ->where('price', '<=', 1000000000)->orderby('created_at', 'desc')->paginate(5);
+                                ->where('price', '<=', 10000000)->orderby('created_at', 'desc')->paginate(5);
                         }
                         // Giá > 4 tỉ
                         if ($price_short == '5') {
@@ -979,7 +979,7 @@ class HomeController extends Controller
                                 $query->where($adr_column, '=', $request->adr_city_id);
                                 $query->where($project_column, '=', $request->project_id);
                             }])
-                                ->where('price', '>=', 4000000000)->orderby('created_at', 'desc')->paginate(5);
+                                ->where('price', '>=', 50000000)->orderby('created_at', 'desc')->paginate(5);
                         }
                         // Giá từ 1 - 4 tỉ
                         if ($price_short != '0' && $price_short != '5') {
